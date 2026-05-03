@@ -1,0 +1,931 @@
+body {
+    margin: 0;
+    background-color: #CDDE88;
+    display: flex;
+    overflow: hidden;
+    font-family: 'Unkempt';
+    font-size: large;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.bg {
+    background-image: url("bg.jpeg");
+    height: 400vh;
+    width: 400vw;
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    cursor: grab;
+}
+
+.house {
+    position: absolute;
+    z-index: 2;
+    height: 40vh;
+    width: auto;
+    background-color: transparent;
+    transform: translateY(-10vh);
+}
+
+.house:hover + .resWrapper {
+    display: block;
+}
+
+.resWrapper {
+    display: none;
+    position: absolute;
+    transform: translate(150px, -80px);
+    z-index: 20;
+}
+
+.house:hover {
+    cursor: pointer;
+}
+
+/* Stick + stone population*/
+
+.sticks {
+    position: absolute;
+    z-index: 7;
+    height: 10vh;
+    width: auto;
+    background-color: transparent;
+}
+
+.sticks:hover {
+    cursor: pointer;
+}
+
+#sticks1 {
+    top: 1181px;
+    right: 553px;
+}
+
+#sticks2 {
+    top: 2385px;
+    left: 1193px;
+}
+
+#sticks3 {
+    top: 253px;
+    right: 1784px;
+}
+
+#sticks4 {
+    top: 985px;
+    left: 518px;
+}
+
+#sticks5 {
+    top: 704px;
+    right: 1045px;
+}
+
+#sticks6 {
+    top: 313px;
+    left: 169px;
+}
+
+#sticks7 {
+    bottom: 1048px;
+    right: 510px;
+}
+
+#sticks8 {
+    top: 1568px;
+    right: 213px;
+}
+
+#sticks9 {
+    bottom: 1514px;
+    left: 468px;
+}
+
+#sticks10 {
+    top: 964px;
+    left: 772px;
+}
+
+#sticks11 {
+    bottom: 1079px;
+    right: 38px;
+}
+
+#sticks12 {
+    bottom: 20px;
+    right: 775px;
+}
+
+#sticks13 {
+    bottom: 798px;
+    right: 668px;
+}
+
+#sticks14 {
+    bottom: 985px;
+    right: 518px;
+}
+
+#sticks15 {
+    top: 166px;
+    left: 941px;
+}
+
+#sticks16 {
+    bottom: 1490px;
+    right: 1047px;
+}
+
+#sticks17 {
+    top: 224px;
+    right: 655px;
+}
+
+#sticks18 {
+    bottom: 1568px;
+    left: 213px;
+}
+
+#sticks19 {
+    top: 1296px;
+    right: 678px;
+}
+
+#sticks20 {
+    top: 1384px;
+    left: 1188px;
+}
+
+.stones {
+    position: absolute;
+    z-index: 7;
+    height: 10vh;
+    width: auto;
+    background-color: transparent;
+}
+
+.stones:hover {
+    cursor: pointer;
+}
+
+#stones1 {
+    top: 304px;
+    right: 299px;
+}
+
+#stones2 {
+    top: 430px;
+    left: 903px;
+}
+
+#stones3 {
+    top: 423px;
+    right: 1198px;
+}
+
+#stones4 {
+    top: 955px;
+    left: 766px;
+}
+
+#stones5 {
+    top: 721px;
+    left: 1367px;
+}
+
+#stones6 {
+    bottom: 1467px;
+    left: 473px;
+}
+
+#stones7 {
+    bottom: 656px;
+    right: 1088px;
+}
+
+#stones8 {
+    top: 234px;
+    right: 123px;
+}
+
+#stones9 {
+    top: 627px;
+    right: 1285px;
+}
+
+#stones10 {
+    top: 946px;
+    left: 1572px;
+}
+
+#stones11 {
+    bottom: 961px;
+    right: 825px;
+}
+
+#stones12 {
+    top: 821px;
+    right: 298px;
+}
+
+#stones13 {
+    top: 1190px;
+    left: 543px;
+}
+
+#stones14 {
+    bottom: 1436px;
+    right: 1202px;
+}
+
+#stones15 {
+    bottom: 1156px;
+    left: 207px;
+}
+
+#stones16 {
+    top: 1468px;
+    right: 1048px;
+}
+
+#stones17 {
+    top: 306px;
+    right: 150px;
+}
+
+#stones18 {
+    top: 1362px;
+    left: 118px;
+}
+
+#stones19 {
+    bottom: 459px;
+    left: 900px;
+}
+
+#stones20 {
+    top: 376px;
+    right: 963px;
+}
+
+/* Inventory setup */
+
+.inventory {
+    background-color: transparent;
+    height: auto;
+    width: 80vw;
+    font-weight: 100;
+}
+
+.bottom {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    position: absolute;
+    z-index: 10;
+    width: 100vw;
+    height: 20vmin;
+    bottom: 10vmax;
+    left: 10vw;
+}
+
+.bar {
+    position: relative;
+    gap: 15vw;
+    top: -3vh;
+}
+
+.invSpace {
+    z-index: 12;
+    position: absolute;
+    width: 5vmin;
+    display:flex;
+    flex-direction: column;
+    left: 4vw;
+    top: 4vh;
+}
+
+.invItem {
+    height: 5vmin;
+    top: -3vh;
+}
+
+.invText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.8vmax;
+    padding-top: 0.1vh;
+}
+
+#invStone {
+    left: 15vmax;
+}
+
+#invPlank {
+    left: 26vmax;
+}
+
+#invTile {
+    left: 38vmax;
+}
+
+#invAxe {
+    left: 48vmax;
+}
+
+#invPickaxe {
+    left: 59vmax;
+}
+
+#invAxeIm {
+    height: 8vh;
+    position: absolute;
+    top: 4vw;
+}
+
+#invPickaxeIm {
+    height: 8vh;
+    position: absolute;
+    top: 4vw;
+}
+
+/* Upgrade requirement set up*/
+
+.requirementlist {
+    position: absolute;
+    z-index: 5;
+    height: 40vh;
+    width: auto;
+    background-color: transparent;
+    left: 7vw;
+    top: -10vh;
+}
+
+.upgradeNumber {
+    z-index: 100;
+    position: relative;
+}
+
+.req1 {
+    height: 5vh;
+    width: 10vw;
+    left: 11.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+}
+
+.req2 {
+    height: 5vh;
+    width: 10vw;
+    left: 11.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+}
+
+.req3 {
+    height: 5vh;
+    width: 10vw;
+    left: 11.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+}
+
+.req4 {
+    height: 5vh;
+    width: 15vw;
+    left: 11.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+}
+
+.reqPic {
+    width: 5vh;
+    left: 5vw;
+    z-index: 10;
+}
+
+.reqText {
+    z-index: 12;
+    float: right;
+}
+
+.upgrade {
+    display: flex;
+    flex-direction: column;
+    left: 12vw;
+    position: absolute;
+
+}
+
+/* Tree + boulder population */
+
+.tree {
+    position: absolute;
+    z-index: 5;
+    height: 40vh;
+    width: auto;
+    background-color: transparent;
+}
+
+.tree:hover {
+    cursor: pointer;
+}
+
+#tree1 {
+    top: 716px;
+    left: 1358px;
+}
+
+#tree2 {
+    bottom: 494px;
+    left: 296px;
+}
+
+#tree3 {
+    bottom: 876px;
+    right: 372px;
+}
+
+#tree4 {
+    bottom: 437px;
+    right: 976px;
+}
+
+#tree5 {
+    top: 837px;
+    left: 251px;
+}
+
+#tree6 {
+    top: 371px;
+    right: 1436px;
+}
+
+#tree7 {
+    bottom: 1081px;
+    left: 1331px;
+}
+
+#tree8 {
+    top: 1150px;
+    right: 1574px;
+}
+
+#tree9 {
+    bottom: 1533px;
+    right: 1594px;
+}
+
+#tree10 {
+    top: 634px;
+    left: 742px;
+}
+
+#tree11 {
+    bottom: 589px;
+    left: 337px;
+}
+
+#tree12 {
+    bottom: 471px;
+    left: 1118px;
+}
+
+#tree13 {
+    top: 297px;
+    right: 1549px;
+}
+
+#tree14 {
+    top: 72px;
+    left: 347px;
+}
+
+#tree15 {
+    bottom: 1024px;
+    right: 161px;
+}
+
+#tree16 {
+    top: 677px;
+    left: 1195px;
+}
+
+#tree17 {
+    top: 840px;
+    right: 1110px;
+}
+
+#tree18 {
+    top: 1563px;
+    right: 938px;
+}
+
+#tree19 {
+    bottom: 1472px;
+    left: 495px;
+}
+
+#tree20 {
+    bottom: 187px;
+    right: 598px;
+}
+
+.boulder {
+    position: absolute;
+    z-index: 4;
+    height: 30vh;
+    width: auto;
+    background-color: transparent;
+}
+
+.boulder:hover {
+    cursor: pointer;
+}
+
+#boulder1 {
+    top: 1321px;
+    right: 586px;
+}
+
+#boulder2 {
+    top: 554px;
+    right: 1522px;
+}
+
+#boulder3 {
+    bottom: 205px;
+    left: 261px;
+}
+
+#boulder4 {
+    top: 742px;
+    left: 958px;
+}
+
+#boulder5 {
+    bottom: 362px;
+    left: 942px;
+}
+
+#boulder6 {
+    top: 1376px;
+    right: 584px;
+}
+
+#boulder7 {
+    top: 209px;
+    left: 1214px;
+}
+
+#boulder8 {
+    top: 1401px;
+    right: 745px;
+}
+
+#boulder9 {
+    bottom: 1506px;
+    left: 1204px;
+}
+
+#boulder10 {
+    top: 198px;
+    right: 657px;
+}
+
+#boulder11 {
+    top: 1582px;
+    left: 1203px;
+}
+
+#boulder12 {
+    top: 760px;
+    right: 1081px;
+}
+
+#boulder13 {
+    bottom: 1375px;
+    left: 1469px;
+}
+
+#boulder14 {
+    top: 71px;
+    right: 1080px;
+}
+
+#boulder15 {
+    bottom: 350px;
+    left: 52px;
+}
+
+#boulder16 {
+    bottom: 1188px;
+    right: 1002px;
+}
+
+#boulder17 {
+    top: 886px;
+    left: 62px;
+}
+
+#boulder18 {
+    top: 570px;
+    left: 1331px;
+}
+
+#boulder19 {
+    bottom: 946px;
+    right: 848px;
+}
+
+#boulder20 {
+    bottom: 1257px;
+    right: 909px;
+}
+
+/* Crafting Set up*/
+
+.InvresWrapper {
+    display: block;
+    position: absolute;
+    bottom: 18vh;
+    z-index: 3;
+    display: none;
+}
+
+.invrequirementlist {
+    position: absolute;
+    z-index: 5;
+    height: 25vh;
+    width: auto;
+    background-color: transparent;
+    top: -6vh;
+    left: -3vw;
+}
+
+#AxeReq {
+    left: 48vw;
+    transform: translateY(30px);
+}
+
+#PickaxeReq {
+    left: 58vw;
+    transform: translateY(30px);
+}
+
+#PlankReq {
+    left: 2vw;
+}
+
+#TileReq {
+    left: 15vw;
+}
+
+.craftLabel {
+    position: relative;
+    z-index: 13;
+}
+
+body:has(#invAxeIm:hover) #AxeReq { 
+    display: block; 
+    cursor: pointer;
+}
+body:has(#invPickaxeIm:hover) #PickaxeReq { 
+    display: block; 
+    cursor: pointer;
+}
+
+body:has(#invSticks:hover) #PlankReq { 
+    display: block; 
+    cursor: pointer;
+}
+
+body:has(#invStones:hover) #TileReq { 
+    display: block; 
+    cursor: pointer;
+}
+
+/* Adding dog + grave */
+
+.grave {
+    height: 20vh;
+    width: auto;
+    left: 300px;
+    top: 300px;
+    z-index: 12;
+    position: absolute;
+}
+
+.dog {
+    position: absolute;
+    z-index: 2;
+    height: 20vh;
+    width: auto;
+    transform: translate(-300px, 80px);
+    background-color: transparent;
+}
+
+.dog:hover {
+    cursor: pointer;
+}
+
+/* Start Screen */
+
+.screen {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.startBtn {
+    border: 2px solid black;
+    height: 5vh;
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.startBtn:hover {
+    background-color: rgb(193, 193, 193);
+    cursor: pointer;
+}
+
+/* Opening Scene */
+
+.qScreen {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote {
+    color: white;
+    animation-name: fade-in;
+    animation-duration: 2s;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.quote:hover {
+    cursor: pointer;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes bounce {
+  0% { transform: translate(-300px, 80px); }
+  25% { transform: translate(-300px, 50px); }
+  50% { transform: translate(-300px, 80px); }
+  75% { transform: translate(-300px, 50px); }
+  100% { transform: translate(-300px, 80px); }
+}
+
+.photoWrapper {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    animation-name: fade-in;
+    animation-duration: 2s;
+}
+
+.photoWrapper:hover {
+    cursor: pointer;
+}
+
+.fullImage {
+    width: auto;
+    height: 40vh;
+    margin-left: 35vw;
+    margin-top: 15vh;
+}
+
+.dialogue {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    justify-content: center;
+    align-items: center;
+    animation-delay: 2s;
+    z-index: 100;
+}
+
+.dWrapper {
+    width: 100vw;
+    height: 100vh;
+    bottom: -54vh;
+    left: 75px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    position: absolute;
+    left: 10vw;
+    top: 20vh;
+    z-index: 10;
+    animation-name: fade-in;
+    animation-duration: 2s;
+}
+
+.dBox {
+    width: 90vw;
+    height: auto;
+    position: absolute;
+}
+
+.tutWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tutorial {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    height: 5vh;
+}
+
+.tutText {
+    color: white;
+}
+
+#tut1 {
+    position: absolute;
+    transform: translateX(500px);
+}
+
+.aboveBar {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#tut2 {
+    transform: translateX(800px)
+}
+
+.text {
+    width: 65vw;
+    line-height: 2;
+}
+
+#invPictureIm {
+    width: 5vw;
+    height: auto;
+    transform: translateY(-15px);
+}
+
+#invDrawing {
+    left: 69.5vmax;
+}

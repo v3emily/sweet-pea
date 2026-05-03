@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sweet Pea</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="qScreen">
+    <div class="photoWrapper" id="photoWrapper">
+        <div class="dialogue" id="dialogue">
+            <div class="dWrapper" id="dWrapper">
+                <div class="text" id="text1">yap yap</div>
+                <div class="text" id="text2" style="display: none;">yap yap, yap yap YAP YAP yap yap</div>
+                <img src="dialogue.png" class="dBox">
+            </div>
+        </div>
+        <img src="pictureEnd.png" class="fullImage" id="picFull">
+    </div>
+     <div class="quote" id="quote" style="display: none;">
+        <p>yap yap</p>
+        <p>yap yap yap yap</p>
+    </div>
+</div>
+
+<script>
+
+const quote = document.getElementById("quote")
+const photoWrapper = document.getElementById("photoWrapper")
+const dWrapper = document.getElementById("dWrapper")
+
+quote.addEventListener("click", async () => {
+    quote.style.animationName = "fade-out";
+    quote.style.animationDuration = "2s";
+    quote.style.display = "none";
+    window.location.href = "index.html";
+});
+
+var textCount = 1
+
+const text1 = document.getElementById("text1")
+const text2 = document.getElementById("text2")
+
+dWrapper.addEventListener("click", async () => {
+    if (textCount == 1){
+        text1.style.display = "none";
+        text2.style.display = "block";
+    }
+    if (textCount == 2) {
+        dWrapper.style.display = "none";
+        photoWrapper.style.animationName = "fade-out";
+        photoWrapper.style.animationDuration = "2s";
+        photoWrapper.style.display = "none";
+        quote.style.display = "block";
+    }
+    textCount += 1;
+})
+
+</script>
+
+</body>
+</html>

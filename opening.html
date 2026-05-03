@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TBA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="qScreen">
+    <div class="quote" id="quote">
+        <div class="verse">
+            <p>Dear Annie,</p>
+        </div>
+        <div class="verse">
+            <p>I am sorry but your grandmother, Margaret, passed away last night.</p>
+            <p>She lived alone, so the authorities asked me to get ahold of you. </p>
+        </div>
+        <div class="verse">
+            <p>We may have only been neighbours, but she was a good woman.</p>
+            <p>She talked about you (her “sweet pea”, she would say) and</p>
+            <p>how you were doing in the big city often. </p>
+        </div>
+        <div class="verse">
+            <p>I have the keys to her property at 9812 Beech Road whenever you need it. </p>
+        </div>
+        <div class="verse">
+            <p>My condolences,</p>
+            <p>Frank</p>
+        </div>
+    </div>
+    <div class="photoWrapper" id="photoWrapper" style="display: none;">
+        <div class="dialogue" id="dialogue">
+            <div class="dWrapper" id="dWrapper">
+                <div class="text" id="text1">When I was 5, I gave this drawing to my grandma as a birthday present. We lived in a house that was falling apart, but I guess it never felt that way when she was here. </div>
+                <div class="text" id="text2" style="display: none;"><i>I'm finally coming home, grandma.</i></div>
+                <img src="dialogue.png" class="dBox">
+            </div>
+        </div>
+        <img src="picture.png" class="fullImage" id="picFull">
+    </div>
+    <div class="quote" id="quote2" style="display: none;">
+        <div class="verse">
+            <p>Obtained Drawing x1.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+
+const quote = document.getElementById("quote")
+const quote2 = document.getElementById("quote2")
+const photoWrapper = document.getElementById("photoWrapper")
+const dWrapper = document.getElementById("dWrapper")
+
+quote.addEventListener("click", async () => {
+    quote.style.animationName = "fade-out";
+    quote.style.animationDuration = "2s";
+    quote.style.display = "none";
+    photoWrapper.style.display = "block";
+});
+
+var textCount = 1
+
+const text1 = document.getElementById("text1")
+const text2 = document.getElementById("text2")
+
+dWrapper.addEventListener("click", async () => {
+    if (textCount == 1){
+        text1.style.display = "none";
+        text2.style.display = "block";
+    }
+    if (textCount == 2) {
+        photoWrapper.style.animationName = "fade-out";
+        photoWrapper.style.animationDuration = "2s";
+        photoWrapper.style.display = "none";
+        quote2.style.display = "block";
+    }
+    textCount += 1;
+})
+
+quote2.addEventListener("click", async () => {
+    if (textCount == 3) {
+        quote2.style.animationName = "fade-out";
+        quote.style.animationDuration = "2s";
+        window.location.href = "game.html";
+    }
+});
+</script>
+
+</body>
+</html>

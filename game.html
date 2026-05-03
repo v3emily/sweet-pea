@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sweet Pea</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <div class="dialogue" id="dialogue">
+        <div class="dWrapper" id="dWrapper1">
+            <div class="text" id="t1.1">The white tiles on the roof were Grandma's idea. She thought it would be funny or something to make it look like we were living in a giant mushroom.  </div>
+            <div class="text" id="t1.2" style="display: none;">As a kid, I thought it was the most magical thing I had ever seen.</div>
+            <div class="text" id="t1.3" style="display: none;">It would hurt her, I think, to see the state of this house now. </div>
+            <img src="dialogue.png" class="dBox">
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="aboveBar">
+            <h1 style="color: white;">Inventory</h1>
+            <div class="tutorial" id="tut2" style="display: none;">
+                <div class="tutWrapper">
+                    <img src="arrow.PNG" class="icon">
+                    <div class="tutText">Hover over items and click to craft</div>
+                </div>
+            </div>
+        </div>
+        <div class="bar">
+            <div class="invSpace" id="invStick" style="display: none;">
+                <div class="invText" id="invStickText">
+                    <p>Sticks</p>
+                    <p class="quant" id="stickQuant">x1</p>
+                </div>
+                <img src="sticks.png" class="invItem" id="invSticks">
+            </div>
+            <div class="invSpace" id="invStone" style="display: none;">
+                <div class="invText" id="invStoneText">
+                    <p>Stones</p>
+                    <p class="quant" id="stoneQuant">x1</p>
+                </div>
+                <img src="stones.png" class="invItem" id="invStones">
+            </div>
+            <div class="invSpace" id="invPlank" style="display: none;">
+                <div class="invText" id="invPlankText">
+                    <p>Planks</p>
+                    <p class="quant" id="plankQuant">x1</p>
+                </div>
+                <img src="plank.png" class="invItem" id="invPlanks">
+            </div>
+            <div class="invSpace" id="invTile" style="display: none;">
+                <div class="invText" id="invTileText">
+                    <p>Tiles</p>
+                    <p class="quant" id="tileQuant">x1</p>
+                </div>
+                <img src="tile.png" class="invItem" id="invTiles">
+            </div>
+            <div class="invSpace" id="invAxe" style="display: none;">
+                <div class="invText" id="invAxeText">
+                    <p>Axe</p>
+                </div>
+                <img src="axeIna.png" class="invItem" id="invAxeIm">
+            </div>
+            <div class="invSpace" id="invPickaxe" style="display: none;">
+                <div class="invText" id="invPickaxeText">
+                    <p>Pickaxe</p>
+                </div>
+                <img src="pickaxeIna.png" class="invItem" id="invPickaxeIm">
+            </div>
+            <div class="invSpace" id="invDrawing">
+                <div class="invText" id="invDrawingText">
+                    <p>Drawing</p>
+                </div>
+                <img src="picture.png" class="invItem" id="invPictureIm">
+            </div>
+            <img src="inventory.png" class="inventory" id="inventory">
+        </div>
+        <div class="InvresWrapper" id="PlankReq">
+            <img src="reqlist.png" class="invrequirementlist" id="invreqlistPlank">
+            <div class="craft" id="PlankCraft">
+                <div class="craftLabel">Plank x1</div>
+                <div class="req1" id="req1.1">
+                    <img src="sticks.png" class="reqPic" style="display: block;">
+                    <p class="reqText">Sticks 2x</p>
+                </div>
+            </div>
+        </div>
+         <div class="InvresWrapper" id="TileReq">
+            <img src="reqlist.png" class="invrequirementlist" id="invreqlistTile">
+            <div class="craft" id="TileCraft">
+                <div class="craftLabel">Tile x1</div>
+                <div class="req1" id="req1.1">
+                    <img src="stones.png" class="reqPic" style="display: block;">
+                    <p class="reqText">Stones 2x</p>
+                </div>
+            </div>
+        </div>
+        <div class="InvresWrapper" id="AxeReq">
+            <img src="reqlist.png" class="invrequirementlist" id="invreqlistAxe">
+            <div class="craft" id="axeCraft">
+                <div class="craftLabel">Axe x1</div>
+                <div class="req1" id="req1.1">
+                    <img src="sticks.png" class="reqPic" style="display: block;">
+                    <p class="reqText">Sticks 1x</p>
+                </div>
+                <div class="req2" id="req1.2">
+                    <img src="stones.png" class="reqPic" style="display: block;">
+                    <p class="reqText">Stones 1x</p>
+                </div>
+            </div>
+        </div>
+        <div class="InvresWrapper" id="PickaxeReq">
+            <img src="reqlist.png" class="invrequirementlist" id="invreqlistPickAxe">
+            <div class="craft" id="PickaxeCraft">
+                <div class="craftLabel">Pickaxe x1</div>
+                <div class="req1" id="req1.1">
+                    <img src="sticks.png" class="reqPic" style="display: block;">
+                    <p class="reqText">Sticks 1x</p>
+                </div>
+                <div class="req2" id="req1.2">
+                    <img src="stones.png" class="reqPic" style="display: block;">
+                    <p class="reqText">Stones 1x</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg" id="bg">
+        <div class="tutorial" id="tut1">
+            <div class="tutWrapper">
+                <img src="drag.PNG" class="icon">
+                <div class="tutText">Click and drag on grass to explore</div>
+            </div>
+            <div class="tutWrapper">
+                <img src="hover.PNG" class="icon">
+                <div class="tutText">Hover over items to view upgrade requirements</div>
+            </div>
+            <div class="tutWrapper">
+                <img src="click.PNG" class="icon">
+                <div class="tutText">Click to interact with objects</div>
+            </div>
+        </div>
+        <img src="house.PNG" class="house" id="house0">
+            <div class="resWrapper">
+                <img src="reqlist.png" class="requirementlist" id="reqlist">
+                <div class="upgrade" id="upgrade1">
+                    <div class="upgradeNumber">Level 1</div>
+                    <div class="req1" id="req1.1">
+                        <img src="sticks.png" class="reqPic" style="display: block;">
+                        <p class="reqText">Sticks 4x</p>
+                    </div>
+                    <div class="req2" id="req1.2">
+                        <img src="stones.png" class="reqPic" style="display: block;">
+                        <p class="reqText">Stones 2x</p>
+                    </div>
+                </div>
+                <div class="upgrade" id="upgrade2" style="display: none;">
+                    <div class="upgradeNumber">Level 2</div>
+                    <div class="req1" id="req2.1">
+                        <img src="sticks.png" class="reqPic" style="display: block;">
+                        <p class="reqText">Sticks 2x</p>
+                    </div>
+                    <div class="req2" id="req2.2">
+                        <img src="stones.png" class="reqPic" style="display: block;">
+                        <p class="reqText">Stones 2x</p>
+                    </div>
+                    <div class="req3" id="req2.3">
+                        <img src="plank.png" class="reqPic" style="display: block;">
+                        <p class="reqText">Planks 2x</p>
+                    </div>
+                    <div class="req4" id="req2.4">
+                        <img src="boulder.png" class="reqPic" style="display: block;">
+                        <p class="reqText">Tiles 2x</p>
+                    </div>
+                </div>
+                <div class="upgrade" id="upgrade3" style="display: none;">
+                    <div class="upgradeNumber">Level 3</div>
+                    <div class="req3" id="req3.3">
+                        <img src="plank.png" class="reqPic" style="display: block;">
+                        <p class="reqText">Planks 4x</p>
+                    </div>
+                    <div class="req4" id="req3.4">
+                        <img src="boulder.png" class="reqPic" style="display: block;">
+                        <p class="reqText">Tiles 4x</p>
+                    </div>
+                </div>
+                <div class="upgrade" id="upgrade4" style="display: none;">
+                    <div class="upgradeNumber">Level 4</div>
+                    <div class="req3" id="req4.3">
+                        <img src="plank.png" class="reqPic" style="display: block;">
+                        <p class="reqText">Planks 6x</p>
+                    </div>
+                    <div class="req4" id="req4.4">
+                        <img src="boulder.png" class="reqPic" style="display: block;">
+                        <p class="reqText">Tiles 6x</p>
+                    </div>
+                </div>
+                <div class="upgrade" id="upgrade5" style="display: none;">
+                    <div class="upgradeNumber">Level 5</div>
+                    <div class="req3" id="req5.3">
+                        <img src="plank.png" class="reqPic" style="display: block;">
+                        <p class="reqText">Planks 8x</p>
+                    </div>
+                    <div class="req4" id="req5.4">
+                        <img src="boulder.png" class="reqPic" style="display: block;">
+                        <p class="reqText">Tiles 8x</p>
+                    </div>
+                </div>
+            </div>
+        <img src="grave.png" class="grave" id="grave">
+        <img src="dog.gif" class="dog" id="dog" style="display: none;">
+        <img src="sticks.png" class="sticks" id="sticks1" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks2" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks3" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks4" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks5" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks6" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks7" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks8" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks9" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks10" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks11" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks12" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks13" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks14" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks15" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks16" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks17" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks18" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks19" style="display: block;">
+        <img src="sticks.png" class="sticks" id="sticks20" style="display: block;">
+
+        <img src="stones.png" class="stones" id="stones1" style="display: block;">
+        <img src="stones.png" class="stones" id="stones2" style="display: block;">
+        <img src="stones.png" class="stones" id="stones3" style="display: block;">
+        <img src="stones.png" class="stones" id="stones4" style="display: block;">
+        <img src="stones.png" class="stones" id="stones5" style="display: block;">
+        <img src="stones.png" class="stones" id="stones6" style="display: block;">
+        <img src="stones.png" class="stones" id="stones7" style="display: block;">
+        <img src="stones.png" class="stones" id="stones8" style="display: block;">
+        <img src="stones.png" class="stones" id="stones9" style="display: block;">
+        <img src="stones.png" class="stones" id="stones10" style="display: block;">
+        <img src="stones.png" class="stones" id="stones11" style="display: block;">
+        <img src="stones.png" class="stones" id="stones12" style="display: block;">
+        <img src="stones.png" class="stones" id="stones13" style="display: block;">
+        <img src="stones.png" class="stones" id="stones14" style="display: block;">
+        <img src="stones.png" class="stones" id="stones15" style="display: block;">
+        <img src="stones.png" class="stones" id="stones16" style="display: block;">
+        <img src="stones.png" class="stones" id="stones17" style="display: block;">
+        <img src="stones.png" class="stones" id="stones18" style="display: block;">
+        <img src="stones.png" class="stones" id="stones19" style="display: block;">
+        <img src="stones.png" class="stones" id="stones20" style="display: block;">
+
+        <img src="tree.png" class="tree" id="tree1" style="display: block;">
+        <img src="tree.png" class="tree" id="tree2" style="display: block;">
+        <img src="tree.png" class="tree" id="tree3" style="display: block;">
+        <img src="tree.png" class="tree" id="tree4" style="display: block;">
+        <img src="tree.png" class="tree" id="tree5" style="display: block;">
+        <img src="tree.png" class="tree" id="tree6" style="display: block;">
+        <img src="tree.png" class="tree" id="tree7" style="display: block;">
+        <img src="tree.png" class="tree" id="tree8" style="display: block;">
+        <img src="tree.png" class="tree" id="tree9" style="display: block;">
+        <img src="tree.png" class="tree" id="tree10" style="display: block;">
+        <img src="tree.png" class="tree" id="tree11" style="display: block;">
+        <img src="tree.png" class="tree" id="tree12" style="display: block;">
+        <img src="tree.png" class="tree" id="tree13" style="display: block;">
+        <img src="tree.png" class="tree" id="tree14" style="display: block;">
+        <img src="tree.png" class="tree" id="tree15" style="display: block;">
+        <img src="tree.png" class="tree" id="tree16" style="display: block;">
+        <img src="tree.png" class="tree" id="tree17" style="display: block;">
+        <img src="tree.png" class="tree" id="tree18" style="display: block;">
+        <img src="tree.png" class="tree" id="tree19" style="display: block;">
+        <img src="tree.png" class="tree" id="tree20" style="display: block;">
+
+        <img src="boulder.png" class="boulder" id="boulder1" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder2" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder3" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder4" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder5" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder6" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder7" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder8" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder9" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder10" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder11" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder12" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder13" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder14" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder15" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder16" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder17" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder18" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder19" style="display: block;">
+        <img src="boulder.png" class="boulder" id="boulder20" style="display: block;">
+    </div>
+</div>
+
+<script>
+bg = document.getElementById("bg");
+
+var curPos = [];
+var dragging = false;
+
+var movedX = 0;
+var movedY = 0;
+
+bg.addEventListener("mousedown", (event) => {
+    curPos = [event.clientX, event.clientY];
+    dragging = true;
+});
+
+
+//Used ChatGPT for bounding logic
+document.addEventListener("mousemove", (event) => {
+    if (dragging) {
+        const nextPos = [event.clientX, event.clientY];
+
+        const distX = nextPos[0] - curPos[0];
+        const distY = nextPos[1] - curPos[1];
+
+        movedX += distX;
+        movedY += distY;
+
+        const container = bg.parentElement;
+
+        const containerRect = container.getBoundingClientRect();
+        const bgRect = bg.getBoundingClientRect();
+
+        const maxX = (bgRect.width - containerRect.width) / 2;
+        const maxY = (bgRect.height - containerRect.height) / 2;
+
+        movedX = Math.max(-maxX, Math.min(maxX, movedX));
+        movedY = Math.max(-maxY, Math.min(maxY, movedY));
+
+        bg.style.transform = `
+            translate(-50%, -50%)
+            translate(${movedX}px, ${movedY}px)
+        `;
+
+        curPos = nextPos;
+        bg.style.cursor = "grabbing";
+    }
+});
+
+bg.addEventListener("mouseup", (event) => {
+    dragging = false;
+    bg.style.cursor = "grab";
+});
+
+// Resource collection
+sticks1 = document.getElementById("sticks1")
+sticks2 = document.getElementById("sticks2")
+sticks3 = document.getElementById("sticks3")
+sticks4 = document.getElementById("sticks4")
+sticks5 = document.getElementById("sticks5")
+sticks6 = document.getElementById("sticks6")
+sticks7 = document.getElementById("sticks7")
+sticks8 = document.getElementById("sticks8")
+sticks9 = document.getElementById("sticks9")
+sticks10 = document.getElementById("sticks10")
+sticks11 = document.getElementById("sticks11")
+sticks12 = document.getElementById("sticks12")
+sticks13 = document.getElementById("sticks13")
+sticks14 = document.getElementById("sticks14")
+sticks15 = document.getElementById("sticks15")
+sticks16 = document.getElementById("sticks16")
+sticks17 = document.getElementById("sticks17")
+sticks18 = document.getElementById("sticks18")
+sticks19 = document.getElementById("sticks19")
+sticks20 = document.getElementById("sticks20")
+stickQuant = document.getElementById("stickQuant")
+
+var stickCount = 20
+
+sticks1.addEventListener("click", async () => {
+    sticks1.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks2.addEventListener("click", async () => {
+    sticks2.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks3.addEventListener("click", async () => {
+    sticks3.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks4.addEventListener("click", async () => {
+    sticks4.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks5.addEventListener("click", async () => {
+    sticks5.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks6.addEventListener("click", async () => {
+    sticks6.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks7.addEventListener("click", async () => {
+    sticks7.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks8.addEventListener("click", async () => {
+    sticks8.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks9.addEventListener("click", async () => {
+    sticks9.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks10.addEventListener("click", async () => {
+    sticks10.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks11.addEventListener("click", async () => {
+    sticks11.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks12.addEventListener("click", async () => {
+    sticks12.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks13.addEventListener("click", async () => {
+    sticks13.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks14.addEventListener("click", async () => {
+    sticks14.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks15.addEventListener("click", async () => {
+    sticks15.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks16.addEventListener("click", async () => {
+    sticks16.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks17.addEventListener("click", async () => {
+    sticks17.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks18.addEventListener("click", async () => {
+    sticks18.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks19.addEventListener("click", async () => {
+    sticks19.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+sticks20.addEventListener("click", async () => {
+    sticks20.style.display = "none";
+    stickCount += 1;
+    incrSticks();
+});
+
+const invStick = document.getElementById("invStick")
+
+function incrSticks() {
+    if (stickCount == 1) {
+        invStick.style.display = "block";
+    } else {
+        stickQuant.textContent = "x" + stickCount;
+    }
+};
+
+stones1 = document.getElementById("stones1")
+stones2 = document.getElementById("stones2")
+stones3 = document.getElementById("stones3")
+stones4 = document.getElementById("stones4")
+stones5 = document.getElementById("stones5")
+stones6 = document.getElementById("stones6")
+stones7 = document.getElementById("stones7")
+stones8 = document.getElementById("stones8")
+stones9 = document.getElementById("stones9")
+stones10 = document.getElementById("stones10")
+stones11 = document.getElementById("stones11")
+stones12 = document.getElementById("stones12")
+stones13 = document.getElementById("stones13")
+stones14 = document.getElementById("stones14")
+stones15 = document.getElementById("stones15")
+stones16 = document.getElementById("stones16")
+stones17 = document.getElementById("stones17")
+stones18 = document.getElementById("stones18")
+stones19 = document.getElementById("stones19")
+stones20 = document.getElementById("stones20")
+stoneQuant = document.getElementById("stoneQuant")
+
+var stoneCount = 20
+
+stones1.addEventListener("click", async () => {
+    stones1.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones2.addEventListener("click", async () => {
+    stones2.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones3.addEventListener("click", async () => {
+    stones3.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones4.addEventListener("click", async () => {
+    stones4.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones5.addEventListener("click", async () => {
+    stones5.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones6.addEventListener("click", async () => {
+    stones6.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones7.addEventListener("click", async () => {
+    stones7.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones8.addEventListener("click", async () => {
+    stones8.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones9.addEventListener("click", async () => {
+    stones9.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones10.addEventListener("click", async () => {
+    stones10.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones11.addEventListener("click", async () => {
+    stones11.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones12.addEventListener("click", async () => {
+    stones12.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones13.addEventListener("click", async () => {
+    stones13.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones14.addEventListener("click", async () => {
+    stones14.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones15.addEventListener("click", async () => {
+    stones15.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones16.addEventListener("click", async () => {
+    stones16.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones17.addEventListener("click", async () => {
+    stones17.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones18.addEventListener("click", async () => {
+    stones18.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones19.addEventListener("click", async () => {
+    stones19.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+stones20.addEventListener("click", async () => {
+    stones20.style.display = "none";
+    stoneCount += 1;
+    incrStones();
+});
+
+const invStone = document.getElementById("invStone")
+
+function incrStones() {
+    if (stoneCount == 1) {
+        invStone.style.display = "block";
+    } else {
+        stoneQuant.textContent = "x" + stoneCount;
+    }
+};
+
+//implement house upgrade!
+
+var houseNum = 0;
+
+const house0 = document.getElementById("house0");
+const invAxe = document.getElementById("invAxe");
+const invPickaxe = document.getElementById("invPickaxe");
+const upgrade1 = document.getElementById("upgrade1");
+const upgrade2 = document.getElementById("upgrade2");
+const upgrade3 = document.getElementById("upgrade3");
+const upgrade4 = document.getElementById("upgrade4");
+const upgrade5 = document.getElementById("upgrade5");
+const dog = document.getElementById("dog");
+
+const tut1 = document.getElementById("tut1");
+const tut2 = document.getElementById("tut2");
+
+house0.addEventListener("click", async () => {
+    if (houseNum == 0) {
+        if ((stickCount >= 4) && (stoneCount >= 2)) {
+            house0.src = 'house1.png';
+            houseNum += 1;
+            dcrSticks(4);
+            dcrStones(2);
+            invAxe.style.display = "block";
+            invPickaxe.style.display = "block";
+            upgrade1.style.display = "none";
+            upgrade2.style.display = "block";
+            tut1.style.display = "none";
+            tut2.style.display = "block";
+            dog.style.display = "block";
+            return
+        }
+    }
+    if (houseNum == 1) {
+        if ((stickCount >= 2) && (stoneCount >= 2) && (plankCount >= 2) && (tileCount >= 2)) {
+            house0.src = 'house2.png';
+            houseNum += 1;
+            dcrSticks(2);
+            dcrStones(2);
+            dcrPlanks(2);
+            dcrTiles(2);
+            upgrade2.style.display = "none";
+            upgrade3.style.display = "block";
+            tut2.style.display = "none";
+            house0.style.height = "80vh";
+            house0.style.transform = "translateY(-100px)";
+            return
+        }
+    }
+    if (houseNum == 2) {
+        if ((plankCount >= 4) && (tileCount >= 4)) {
+            house0.src = 'house3.png';
+            houseNum += 1;
+            dcrPlanks(4);
+            dcrTiles(4);
+            const bg = document.getElementById("bg");
+            bg.style.backgroundImage = 'url("bg2.jpeg")';
+            upgrade3.style.display = "none";
+            upgrade4.style.display = "block";
+            house0.style.transform = "translateY(-125px)";
+            return
+        }
+    }
+    if (houseNum == 3) {
+        if ((plankCount >= 6) && (tileCount >= 6)) {
+            house0.src = 'house4.png';
+            houseNum += 1;
+            dcrPlanks(6);
+            dcrTiles(6);
+            dog.src = 'dogDead.png';
+            dog.style.height = "10vh";
+            upgrade4.style.display = "none";
+            upgrade5.style.display = "block";
+            return
+        }
+    }
+    if (houseNum == 4) {
+        if ((plankCount >= 8) && (tileCount >= 8)) {
+            house0.src = 'house5.png';
+            dcrPlanks(8);
+            dcrTiles(8);
+            house0.style.height = "100vh";
+            house0.style.transform = "translateY(-240px)";
+            endSeq();
+        }
+    }
+});
+
+function dcrStones(amt) {
+    stoneCount = stoneCount - amt;
+    stoneQuant.textContent = "x" + stoneCount;
+    if (stoneCount == 0) {
+        stoneQuant.textContent = "x" + 1;
+        invStone.style.display = "none";
+    }
+};
+
+function dcrSticks(amt) {
+    stickCount = stickCount - amt;
+    stickQuant.textContent = "x" + stickCount;
+    if (stickCount == 0) {
+        stickQuant.textContent = "x" + 1;
+        invStick.style.display = "none";
+    }
+};
+
+function dcrPlanks(amt) {
+    plankCount = plankCount - amt;
+    plankQuant.textContent = "x" + plankCount;
+    if (plankCount == 0) {
+        plankQuant.textContent = "x" + 1;
+        invPlank.style.display = "none";
+    }
+};
+
+function dcrTiles(amt) {
+    tileCount = tileCount - amt;
+    tileQuant.textContent = "x" + tileCount;
+    if (tileCount == 0) {
+        tileQuant.textContent = "x" + 1;
+        invTile.style.display = "none";
+    }
+};
+
+//Crafting implementation
+
+const invAxeIm = document.getElementById("invAxeIm")
+const invPickaxeIm = document.getElementById("invPickaxeIm")
+var axeCraft = false
+var pickaxeCraft = false
+
+invAxeIm.addEventListener("click", async () => {
+    if ((stickCount >= 1) && (stoneCount >= 1)) {
+        invAxeIm.src = 'axeAct.png';
+        dcrSticks(1);
+        dcrStones(1);
+        invAxeIm.style.pointerEvents = "none";
+        axeCraft = true
+    };
+});
+
+invPickaxeIm.addEventListener("click", async () => {
+    if ((stickCount >= 1) && (stoneCount >= 1)) {
+        invPickaxeIm.src = 'pickaxeAct.png';
+        dcrSticks(1);
+        dcrStones(1);
+        invPickaxeIm.style.pointerEvents = "none";
+        pickaxeCraft = true
+    };
+});
+
+var plankCount = 20
+const invPlank = document.getElementById("invPlank")
+const plankQuant = document.getElementById("plankQuant")
+
+invSticks.addEventListener("click", async() => {
+    if ((stickCount >= 2)) {
+        dcrSticks(2);
+        incrPlanks();
+    }
+});
+
+function incrPlanks() {
+    plankCount += 1;
+    if (plankCount == 1) {
+        invPlank.style.display = "block";
+    } else {
+        plankQuant.textContent = "x" + plankCount;
+    }
+};
+
+var tileCount = 20
+const invTile = document.getElementById("invTile")
+const tileQuant = document.getElementById("tileQuant")
+
+invStones.addEventListener("click", async() => {
+    if ((stoneCount >= 2)) {
+        dcrStones(2);
+        incrTiles();
+    }
+});
+
+function incrTiles() {
+    tileCount += 1;
+    if (tileCount == 1) {
+        invTile.style.display = "block";
+    } else {
+        tileQuant.textContent = "x" + tileCount;
+    }
+};
+
+tree1 = document.getElementById("tree1")
+tree2 = document.getElementById("tree2")
+tree3 = document.getElementById("tree3")
+tree4 = document.getElementById("tree4")
+tree5 = document.getElementById("tree5")
+tree6 = document.getElementById("tree6")
+tree7 = document.getElementById("tree7")
+tree8 = document.getElementById("tree8")
+tree9 = document.getElementById("tree9")
+tree10 = document.getElementById("tree10")
+tree11 = document.getElementById("tree11")
+tree12 = document.getElementById("tree12")
+tree13 = document.getElementById("tree13")
+tree14 = document.getElementById("tree14")
+tree15 = document.getElementById("tree15")
+tree16 = document.getElementById("tree16")
+tree17 = document.getElementById("tree17")
+tree18 = document.getElementById("tree18")
+tree19 = document.getElementById("tree19")
+tree20 = document.getElementById("tree20")
+
+tree1.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree1.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree2.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree2.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree3.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree3.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree4.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree4.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree5.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree5.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree6.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree6.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree7.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree7.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree8.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree8.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree9.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree9.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree10.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree10.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree11.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree11.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree12.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree12.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree13.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree13.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree14.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree14.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree15.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree15.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree16.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree16.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree17.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree17.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree18.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree18.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree19.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree19.style.display = "none";
+        incrPlanks();
+    }
+});
+
+tree20.addEventListener("click", async () => {
+    if (axeCraft == true) {
+        tree20.style.display = "none";
+        incrPlanks();
+    }
+});
+
+boulder1 = document.getElementById("boulder1")
+boulder2 = document.getElementById("boulder2")
+boulder3 = document.getElementById("boulder3")
+boulder4 = document.getElementById("boulder4")
+boulder5 = document.getElementById("boulder5")
+boulder6 = document.getElementById("boulder6")
+boulder7 = document.getElementById("boulder7")
+boulder8 = document.getElementById("boulder8")
+boulder9 = document.getElementById("boulder9")
+boulder10 = document.getElementById("boulder10")
+boulder11 = document.getElementById("boulder11")
+boulder12 = document.getElementById("boulder12")
+boulder13 = document.getElementById("boulder13")
+boulder14 = document.getElementById("boulder14")
+boulder15 = document.getElementById("boulder15")
+boulder16 = document.getElementById("boulder16")
+boulder17 = document.getElementById("boulder17")
+boulder18 = document.getElementById("boulder18")
+boulder19 = document.getElementById("boulder19")
+boulder20 = document.getElementById("boulder20")
+
+boulder1.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder1.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder2.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder2.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder3.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder3.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder4.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder4.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder5.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder5.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder6.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder6.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder7.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder7.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder8.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder8.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder9.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder9.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder10.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder10.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder11.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder11.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder12.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder12.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder13.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder13.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder14.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder14.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder15.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder15.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder16.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder16.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder17.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder17.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder18.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder18.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder19.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder19.style.display = "none";
+        incrTiles();
+    }
+});
+
+boulder20.addEventListener("click", async () => {
+    if (pickaxeCraft == true) {
+        boulder20.style.display = "none";
+        incrTiles();
+    }
+});
+
+function endSeq() {
+    setTimeout(() => {
+        window.location.href = "bad_end.html"
+    }, 3000);
+}
+
+dog.addEventListener("click", async () => {
+    dog.style.animationName = "bounce";
+    dog.style.animationDuration = "2s";
+});
+
+const dialogue = document.getElementById("dialogue")
+const t11 = document.getElementById("t1.1")
+const t12 = document.getElementById("t1.2")
+const t13 = document.getElementById("t1.3")
+const dWrapper1 = document.getElementById("dWrapper1")
+
+var textCount = 1
+
+dialogue.addEventListener("click", async () => {
+    if (textCount == 1) {
+        t11.style.display = "none";
+        t12.style.display = "block";
+    }
+    if (textCount == 2) {
+        t12.style.display = "none";
+        t13.style.display = "block";
+    }
+    if (textCount == 3) {
+        dWrapper1.style.display = "none";
+        dialogue.style.display = "none";
+    }
+    textCount += 1;
+});
+
+</script>
+
+</body>
+</html>
