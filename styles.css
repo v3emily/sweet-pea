@@ -43,6 +43,15 @@ body {
     transform: translateY(-10vh);
 }
 
+.bush {
+    position: absolute;
+    z-index: 1;
+    height: 20vh;
+    width: auto;
+    transform: translate(-350px, 50px);
+    background-color: transparent;
+}
+
 .house:hover + .resWrapper {
     display: block;
 }
@@ -748,7 +757,7 @@ body:has(#invStones:hover) #TileReq {
     z-index: 2;
     height: 20vh;
     width: auto;
-    transform: translate(-300px, 80px);
+    transform: translate(-350px, 100px);
     background-color: transparent;
 }
 
@@ -816,11 +825,11 @@ body:has(#invStones:hover) #TileReq {
 }
 
 @keyframes bounce {
-  0% { transform: translate(-300px, 80px); }
-  25% { transform: translate(-300px, 50px); }
-  50% { transform: translate(-300px, 80px); }
-  75% { transform: translate(-300px, 50px); }
-  100% { transform: translate(-300px, 80px); }
+  0% { transform: translate(-350px, 100px); }
+  25% { transform: translate(-350px, 80px); }
+  50% { transform: translate(-350px, 100px); }
+  75% { transform: translate(-350px, 80px); }
+  100% { transform: translate(-350px, 100px); }
 }
 
 .photoWrapper {
@@ -848,12 +857,16 @@ body:has(#invStones:hover) #TileReq {
     position: absolute;
     opacity: 0;
     animation-name: fade-in;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
     justify-content: center;
     align-items: center;
     animation-delay: 2s;
     z-index: 100;
+}
+
+.dialogue:hover {
+    cursor: pointer;
 }
 
 .dWrapper {

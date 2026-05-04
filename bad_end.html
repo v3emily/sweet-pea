@@ -12,16 +12,40 @@
     <div class="photoWrapper" id="photoWrapper">
         <div class="dialogue" id="dialogue">
             <div class="dWrapper" id="dWrapper">
-                <div class="text" id="text1">yap yap</div>
-                <div class="text" id="text2" style="display: none;">yap yap, yap yap YAP YAP yap yap</div>
+                <div class="text" id="text1">Hey, you.</div>
+                <div class="text" id="text2" style="display: none;">Look around!</div>
+                <div class="text" id="text3" style="display: none;">Isn't this everything you ever wanted?</div>
                 <img src="dialogue.png" class="dBox">
             </div>
         </div>
         <img src="pictureEnd.png" class="fullImage" id="picFull">
     </div>
      <div class="quote" id="quote" style="display: none;">
-        <p>yap yap</p>
-        <p>yap yap yap yap</p>
+        <div class="verse">
+            <p>Dear Anna,</p>
+        </div>
+        <div class="verse">
+            <p>How are you, my sweet pea?</p>
+            <p>The house feels so dull without you. </p>
+        </div>
+        <div class="verse">
+            <p>Anna, I'm so happy you're following your dreams in the big city. I am one proud grandma!</p>
+        </div>
+        <div class="verse">
+            <p>But remember: if life ever feels gross and mushy, <u>come home to me.</u> </p>
+        </div>
+        <div class="verse">
+            <p>I'll be here waiting. </p>
+        </div>
+        <div class="verse">
+            <p>Be happy, okay? It's all a grandma could ask for. </p>
+        </div>
+        <div class="verse">
+            <p>Love, </p>
+        </div>
+        <div class="verse">
+            <p>Your grandma</p>
+        </div>
     </div>
 </div>
 
@@ -35,13 +59,16 @@ quote.addEventListener("click", async () => {
     quote.style.animationName = "fade-out";
     quote.style.animationDuration = "2s";
     quote.style.display = "none";
-    window.location.href = "index.html";
+    setTimeout(() => {
+        window.location.href = "index.html";
+     }, 2000);
 });
 
 var textCount = 1
 
 const text1 = document.getElementById("text1")
 const text2 = document.getElementById("text2")
+const text3 = document.getElementById("text3")
 
 dWrapper.addEventListener("click", async () => {
     if (textCount == 1){
@@ -49,6 +76,10 @@ dWrapper.addEventListener("click", async () => {
         text2.style.display = "block";
     }
     if (textCount == 2) {
+        text2.style.display = "none";
+        text3.style.display = "block";
+    }
+    if (textCount == 3) {
         dWrapper.style.display = "none";
         photoWrapper.style.animationName = "fade-out";
         photoWrapper.style.animationDuration = "2s";

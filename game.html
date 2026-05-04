@@ -16,6 +16,48 @@
             <div class="text" id="t1.3" style="display: none;">It would hurt her, I think, to see the state of this house now. </div>
             <img src="dialogue.png" class="dBox">
         </div>
+        <div class="dWrapper" id="dWrapper2" style="display: none;">
+            <div class="text" id="t2.1">Impossible.</div>
+            <div class="text" id="t2.2" style="display: none;"><i>Something is in the bushes.</i></div>
+            <div class="text" id="t2.3" style="display: none;">Oh, my beautiful girl!</div>
+            <div class="text" id="t2.4" style="display: none;">Lola was my grandmother's dog. I guess she managed to scavenge away in the woods for weeks. Just like the brave puppy I remember. </div>
+            <div class="text" id="t2.5" style="display: none;">Lola, it's just you and me now. We'll make this house magical again.</div>
+            <img src="dialogue.png" class="dBox">
+        </div>
+        <div class="dWrapper" id="dWrapper3" style="display: none;">
+            <div class="text" id="t3.1">Lola, look at us go! Grandma would've loved this.</div>
+            <div class="text" id="t3.2" style="display: none;">If only I could show my old boss how well off we are now. He was a dirty bastard, that man.</div>
+            <div class="text" id="t3.3" style="display: none;">Look… There are so many trees and boulders still. We can make the house bigger and better and so much more beautiful.</div>
+            <div class="text" id="t3.4" style="display: none;">It's what Grandma would've wanted. </div>
+            <img src="dialogue.png" class="dBox">
+        </div>
+        <div class="dWrapper" id="dWrapper4" style="display: none;">
+            <div class="text" id="t4.1">The weather's always a bit gloomy nowadays. What's up with that, Lola? </div>
+            <div class="text" id="t4.2" style="display: none;">Anyway. Isn't our house looking grand? Doesn't it remind you of the houses we would see in those celebrity gossip magazines growing up?</div>
+            <div class="text" id="t4.3" style="display: none;">You would always find a way chew them up, you rascal. </div>
+            <div class="text" id="t4.4" style="display: none;">Lola, I got a letter from old Frank next door. Apparently, we're poisoning the water, or some nonsense like that. He wants me to stop expanding the house.  </div>
+            <div class="text" id="t4.5" style="display: none;">Lola, it's funny—all my life, people have been telling me something of this sort. Leave town? <i>Ridiculous.</i> Go to college? <i>Funny girl.</i> Move out? Permanently? <i>Crazy woman.</i>  </div>
+            <div class="text" id="t4.6" style="display: none;">Stay home, take care of your grandma. Squish your dreams smaller and smaller and smaller still. Adhere to the way things are and reduce yourself to the size of a small, inconspicuous pea.   </div>
+            <div class="text" id="t4.7" style="display: none;">Frank has no idea what he is asking of me. </div>
+            <div class="text" id="t4.8" style="display: none;">I need to go bigger.  </div>
+            <img src="dialogue.png" class="dBox">
+        </div>
+        <div class="dWrapper" id="dWrapper5" style="display: none;">
+            <div class="text" id="t5.1">Lola?</div>
+            <div class="text" id="t5.2" style="display: none;">Lola. Wake up, girl.</div>
+            <div class="text" id="t5.3" style="display: none;">Lola, <i>please.</i></div>
+            <div class="text" id="t5.4" style="display: none;">Life is rather cruel, isn't it? </div>
+            <div class="text" id="t5.5" style="display: none;">I sell my soul to escape this hellhole, and it plops me right into the mouth of another one. I try to fulfill my grandma's last wishes, and it destroys her homeland. I come from nothing, and life somehow still manages to take everything from me. </div>
+            <div class="text" id="t5.6" style="display: none;">But I must keep going. </div>
+            <div class="text" id="t5.7" style="display: none;">I will not be pitied. </div>
+            <img src="dialogue.png" class="dBox">
+        </div>
+        <div class="dWrapper" id="dWrapper6" style="display: none;">
+            <div class="text" id="t6.1">Frank moved out a few months ago. Something about the land being inhabitable. </div>
+            <div class="text" id="t6.2" style="display: none;">What a bunch of Bullcrap.</div>
+            <div class="text" id="t6.3" style="display: none;">I'm doing just fine.</div>
+            <img src="dialogue.png" class="dBox">
+        </div>
     </div>
     <div class="bottom">
         <div class="aboveBar">
@@ -207,6 +249,12 @@
                     </div>
                 </div>
             </div>
+        <audio id="bark" src="bark.mp3"></audio>
+        <audio id="bushSfx" src="bush.mp4"></audio>
+        <audio id="bgm" src="bgm.mp3"></audio>
+        <audio id="wind" src="wind.mp4"></audio>
+        <audio id="construction" src="construction.mp4"></audio>
+        <img src="bush.PNG" class="bush" id="bush">
         <img src="grave.png" class="grave" id="grave">
         <img src="dog.gif" class="dog" id="dog" style="display: none;">
         <img src="sticks.png" class="sticks" id="sticks1" style="display: block;">
@@ -669,9 +717,12 @@ const upgrade3 = document.getElementById("upgrade3");
 const upgrade4 = document.getElementById("upgrade4");
 const upgrade5 = document.getElementById("upgrade5");
 const dog = document.getElementById("dog");
+const bush = document.getElementById("bush");
 
 const tut1 = document.getElementById("tut1");
 const tut2 = document.getElementById("tut2");
+const bark = document.getElementById("bark")
+const construction = document.getElementById("construction")
 
 house0.addEventListener("click", async () => {
     if (houseNum == 0) {
@@ -686,7 +737,12 @@ house0.addEventListener("click", async () => {
             upgrade2.style.display = "block";
             tut1.style.display = "none";
             tut2.style.display = "block";
-            dog.style.display = "block";
+            dialogue.style.display = "block";
+            dWrapper2.style.display = "block";
+            bark.play();
+            setTimeout(() => {
+                bark.pause();
+            }, 2000);
             return
         }
     }
@@ -703,6 +759,8 @@ house0.addEventListener("click", async () => {
             tut2.style.display = "none";
             house0.style.height = "80vh";
             house0.style.transform = "translateY(-100px)";
+            dialogue.style.display = "block";
+            dWrapper3.style.display = "block";
             return
         }
     }
@@ -717,6 +775,8 @@ house0.addEventListener("click", async () => {
             upgrade3.style.display = "none";
             upgrade4.style.display = "block";
             house0.style.transform = "translateY(-125px)";
+            dialogue.style.display = "block";
+            dWrapper4.style.display = "block";
             return
         }
     }
@@ -727,9 +787,13 @@ house0.addEventListener("click", async () => {
             dcrPlanks(6);
             dcrTiles(6);
             dog.src = 'dogDead.png';
+            bush.style.display = "none";
             dog.style.height = "10vh";
+            dog.style.transform = "translate(-350px, 120px)"
             upgrade4.style.display = "none";
             upgrade5.style.display = "block";
+            dialogue.style.display = "block";
+            dWrapper5.style.display = "block";
             return
         }
     }
@@ -740,7 +804,9 @@ house0.addEventListener("click", async () => {
             dcrTiles(8);
             house0.style.height = "100vh";
             house0.style.transform = "translateY(-240px)";
-            endSeq();
+            dialogue.style.display = "block";
+            dWrapper6.style.display = "block";
+            construction.play();
         }
     }
 });
@@ -1170,22 +1236,49 @@ boulder20.addEventListener("click", async () => {
     }
 });
 
-function endSeq() {
-    setTimeout(() => {
-        window.location.href = "bad_end.html"
-    }, 3000);
-}
-
-dog.addEventListener("click", async () => {
-    dog.style.animationName = "bounce";
-    dog.style.animationDuration = "2s";
-});
+//Dialogue!
 
 const dialogue = document.getElementById("dialogue")
 const t11 = document.getElementById("t1.1")
 const t12 = document.getElementById("t1.2")
 const t13 = document.getElementById("t1.3")
 const dWrapper1 = document.getElementById("dWrapper1")
+const t21 = document.getElementById("t2.1")
+const t22 = document.getElementById("t2.2")
+const t23 = document.getElementById("t2.3")
+const t24 = document.getElementById("t2.4")
+const t25 = document.getElementById("t2.5")
+const dWrapper2 = document.getElementById("dWrapper2")
+const t31 = document.getElementById("t3.1")
+const t32 = document.getElementById("t3.2")
+const t33 = document.getElementById("t3.3")
+const t34 = document.getElementById("t3.4")
+const dWrapper3 = document.getElementById("dWrapper3")
+const t41 = document.getElementById("t4.1")
+const t42 = document.getElementById("t4.2")
+const t43 = document.getElementById("t4.3")
+const t44 = document.getElementById("t4.4")
+const t45 = document.getElementById("t4.5")
+const t46 = document.getElementById("t4.6")
+const t47 = document.getElementById("t4.7")
+const t48 = document.getElementById("t4.8")
+const dWrapper4 = document.getElementById("dWrapper4")
+const t51 = document.getElementById("t5.1")
+const t52 = document.getElementById("t5.2")
+const t53 = document.getElementById("t5.3")
+const t54 = document.getElementById("t5.4")
+const t55 = document.getElementById("t5.5")
+const t56 = document.getElementById("t5.6")
+const t57 = document.getElementById("t5.7")
+const dWrapper5 = document.getElementById("dWrapper5")
+const t61 = document.getElementById("t6.1")
+const t62 = document.getElementById("t6.2")
+const t63 = document.getElementById("t6.3")
+const dWrapper6 = document.getElementById("dWrapper6")
+
+const bushSfx = document.getElementById("bushSfx")
+const bgm = document.getElementById("bgm")
+const wind = document.getElementById("wind")
 
 var textCount = 1
 
@@ -1193,6 +1286,8 @@ dialogue.addEventListener("click", async () => {
     if (textCount == 1) {
         t11.style.display = "none";
         t12.style.display = "block";
+        bgm.loop = true;
+        bgm.play();
     }
     if (textCount == 2) {
         t12.style.display = "none";
@@ -1201,6 +1296,122 @@ dialogue.addEventListener("click", async () => {
     if (textCount == 3) {
         dWrapper1.style.display = "none";
         dialogue.style.display = "none";
+    }
+    if (textCount == 4) {
+        t21.style.display = "none";
+        t22.style.display = "block";
+        bushSfx.play();
+    }
+    if (textCount == 5) {
+        dog.style.display = "block";
+        dog.style.animationName = "bounce";
+        dog.style.animationDuration = "2s";
+        t22.style.display = "none";
+        t23.style.display = "block";
+        bark.play();
+    }
+    if (textCount == 6) {
+        t23.style.display = "none";
+        t24.style.display = "block";
+    }
+    if (textCount == 7) {
+        t24.style.display = "none";
+        t25.style.display = "block";
+    }
+    if (textCount == 8) {
+        dWrapper2.style.display = "none";
+        dialogue.style.display = "none";
+    }
+    if (textCount == 9) {
+        t31.style.display = "none";
+        t32.style.display = "block";
+    }
+    if (textCount == 10) {
+        t32.style.display = "none";
+        t33.style.display = "block";
+    }
+    if (textCount == 11) {
+        t33.style.display = "none";
+        t34.style.display = "block";
+    }
+    if (textCount == 12) {
+        dWrapper3.style.display = "none";
+        dialogue.style.display = "none";
+    }
+    if (textCount == 13) {
+        t41.style.display = "none";
+        t42.style.display = "block";
+    }
+    if (textCount == 14) {
+        t42.style.display = "none";
+        t43.style.display = "block";
+    }
+    if (textCount == 15) {
+        t43.style.display = "none";
+        t44.style.display = "block";
+    }
+    if (textCount == 16) {
+        t44.style.display = "none";
+        t45.style.display = "block";
+    }
+    if (textCount == 17) {
+        t45.style.display = "none";
+        t46.style.display = "block";
+    }
+    if (textCount == 18) {
+        t46.style.display = "none";
+        t47.style.display = "block";
+    }
+    if (textCount == 19) {
+        t47.style.display = "none";
+        t48.style.display = "block";
+    }
+    if (textCount == 20) {
+        dWrapper4.style.display = "none";
+        dialogue.style.display = "none";
+    }
+    if (textCount == 21) {
+        t51.style.display = "none";
+        t52.style.display = "block";
+    }
+    if (textCount == 22) {
+        t52.style.display = "none";
+        t53.style.display = "block";
+    }
+    if (textCount == 23) {
+        bgm.pause();
+        setTimeout(() => {
+        t53.style.display = "none";
+        t54.style.display = "block";
+        }, 2000);
+    }
+    if (textCount == 24) {
+        t54.style.display = "none";
+        t55.style.display = "block";
+    }
+    if (textCount == 25) {
+        t55.style.display = "none";
+        t56.style.display = "block";
+    }
+    if (textCount == 26) {
+        t56.style.display = "none";
+        t57.style.display = "block";
+    }
+    if (textCount == 27) {
+        dWrapper5.style.display = "none";
+        dialogue.style.display = "none";
+        wind.play();
+    }
+    if (textCount == 28) {
+        t61.style.display = "none";
+        t62.style.display = "block";
+    }
+    if (textCount == 29) {
+        t62.style.display = "none";
+        t63.style.display = "block";
+    }
+    if (textCount == 30) {
+        window.location.href = "bad_end.html";
     }
     textCount += 1;
 });
