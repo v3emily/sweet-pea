@@ -418,7 +418,7 @@ sticks19 = document.getElementById("sticks19")
 sticks20 = document.getElementById("sticks20")
 stickQuant = document.getElementById("stickQuant")
 
-var stickCount = 20
+var stickCount = 0
 
 sticks1.addEventListener("click", async () => {
     sticks1.style.display = "none";
@@ -572,7 +572,7 @@ stones19 = document.getElementById("stones19")
 stones20 = document.getElementById("stones20")
 stoneQuant = document.getElementById("stoneQuant")
 
-var stoneCount = 20
+var stoneCount = 0
 
 stones1.addEventListener("click", async () => {
     stones1.style.display = "none";
@@ -874,7 +874,7 @@ invPickaxeIm.addEventListener("click", async () => {
     };
 });
 
-var plankCount = 20
+var plankCount = 0
 const invPlank = document.getElementById("invPlank")
 const plankQuant = document.getElementById("plankQuant")
 
@@ -894,7 +894,7 @@ function incrPlanks() {
     }
 };
 
-var tileCount = 20
+var tileCount = 0
 const invTile = document.getElementById("invTile")
 const tileQuant = document.getElementById("tileQuant")
 
@@ -1400,6 +1400,7 @@ dialogue.addEventListener("click", async () => {
     if (textCount == 27) {
         dWrapper5.style.display = "none";
         dialogue.style.display = "none";
+        wind.loop = true;
         wind.play();
     }
     if (textCount == 28) {
