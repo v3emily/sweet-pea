@@ -792,6 +792,7 @@ house0.addEventListener("click", async () => {
             house0.style.transform = "translateY(-100px)";
             dialogue.style.display = "block";
             dWrapper3.style.display = "block";
+            startStop();
             return
         }
     }
@@ -812,6 +813,7 @@ house0.addEventListener("click", async () => {
             house0.style.transform = "translateY(-125px)";
             dialogue.style.display = "block";
             dWrapper4.style.display = "block";
+            startStop();
             return
         }
     }
@@ -828,6 +830,7 @@ house0.addEventListener("click", async () => {
             upgrade5.style.display = "block";
             dialogue.style.display = "block";
             dWrapper5.style.display = "block";
+            startStop();
             return
         }
     }
@@ -1328,12 +1331,17 @@ const t61 = document.getElementById("t6.1")
 const t62 = document.getElementById("t6.2")
 const t63 = document.getElementById("t6.3")
 const dWrapper6 = document.getElementById("dWrapper6")
+const t71 = document.getElementById("t7.1")
+const t72 = document.getElementById("t7.2")
+const t73 = document.getElementById("t7.3")
+const dWrapper7 = document.getElementById("dWrapper7")
 
 const bushSfx = document.getElementById("bushSfx")
 const bgm = document.getElementById("bgm")
 const wind = document.getElementById("wind")
 
 var textCount = 1
+var etextCount = 1
 
 dialogue.addEventListener("click", async () => {
     tap.currentTime = 0; 
@@ -1349,6 +1357,22 @@ dialogue.addEventListener("click", async () => {
         dialogue.style.display = "none";
         g2Open = false;
         return
+    }
+    if ((end==true) && (etextCount == 1)) {
+        t71.style.display = "none";
+        t72.style.display = "block";
+        etextCount += 1;
+        return
+    }
+    if (etextCount == 2) {
+        t72.style.display = "none";
+        t73.style.display = "block";
+        etextCount += 1;
+        return
+    }
+    if (etextCount == 3) {
+        window.location.href = "good_end.html";
+
     }
     if (textCount == 1) {
         t11.style.display = "none";
@@ -1388,6 +1412,7 @@ dialogue.addEventListener("click", async () => {
     if (textCount == 8) {
         dWrapper2.style.display = "none";
         dialogue.style.display = "none";
+        startStop();
     }
     if (textCount == 9) {
         t31.style.display = "none";
@@ -1404,6 +1429,7 @@ dialogue.addEventListener("click", async () => {
     if (textCount == 12) {
         dWrapper3.style.display = "none";
         dialogue.style.display = "none";
+        startStop();
     }
     if (textCount == 13) {
         t41.style.display = "none";
@@ -1436,6 +1462,7 @@ dialogue.addEventListener("click", async () => {
     if (textCount == 20) {
         dWrapper4.style.display = "none";
         dialogue.style.display = "none";
+        startStop();
     }
     if (textCount == 21) {
         t51.style.display = "none";
@@ -1447,10 +1474,8 @@ dialogue.addEventListener("click", async () => {
     }
     if (textCount == 23) {
         bgm.pause();
-        setTimeout(() => {
         t53.style.display = "none";
         t54.style.display = "block";
-        }, 2000);
     }
     if (textCount == 24) {
         t54.style.display = "none";
@@ -1549,7 +1574,46 @@ document.querySelectorAll('.boulder').forEach( p => {
 dog.addEventListener("click", async () => {
     bark.currentTime = 0;
     bark.play();
+    setTimeout(() => {
+        bark.pause();
+    }, 2000);
 });
+
+//End 2 implementation
+
+let isRunning = false;
+let startTime = 0;
+let elapsedTime = 0;
+let intervalId = null;
+
+var end = false;
+var can = true;
+
+function startStop() {
+    if (isRunning) {
+    elapsedTime == 0;
+    isRunning = false;
+    clearInterval(intervalId);
+    console.log('stopped at', elapsedTime);
+    } else {
+        startTime = Date.now();
+        isRunning = true;
+
+        intervalId = setInterval(() => {
+            const currentElapsed = elapsedTime + (Date.now() - startTime);
+
+            console.log(currentElapsed);
+
+            if (currentElapsed >= 90000) {
+                end = true;
+                dialogue.style.display = "block"; 
+                dWrapper7.style.display = "block";
+                return
+            }
+        }, 100);
+    }
+}
+
 </script>
 
 </body>

@@ -985,7 +985,7 @@ body:has(#invStones:hover) #TileReq {
     position: absolute;
     opacity: 0;
     animation-name: fade-in;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
     justify-content: center;
     align-items: center;
@@ -1013,7 +1013,7 @@ body:has(#invStones:hover) #TileReq {
     top: 19vh;
     z-index: 10;
     animation-name: fade-in;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 
 .dBox {
