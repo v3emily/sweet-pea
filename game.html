@@ -58,6 +58,20 @@
             <div class="text" id="t6.3" style="display: none;">I'm doing just fine.</div>
             <img src="dialogue.png" class="dBox">
         </div>
+        <div class="dWrapper" id="dWrapper7" style="display: none;">
+            <div class="text" id="t7.1">Lola, it's time for dinner! Come back before it gets dark. </div>
+            <div class="text" id="t7.2" style="display: none;">Another day, come and gone.</div>
+            <div class="text" id="t7.3" style="display: none;">I'm doing just fine.</div>
+            <img src="dialogue.png" class="dBox">
+        </div>
+        <div class="dWrapper" id="dWrapperg1" style="display: none;">
+            <div class="text" id="t6g1">I miss you grandma. </div>
+            <img src="dialogue.png" class="dBox">
+        </div>
+        <div class="dWrapper" id="dWrapperg2" style="display: none;">
+            <div class="text" id="t6g2">I'm sorry grandma. </div>
+            <img src="dialogue.png" class="dBox">
+        </div>
     </div>
     <div class="bottom">
         <div class="aboveBar">
@@ -254,6 +268,8 @@
         <audio id="bgm" src="bgm.mp3"></audio>
         <audio id="wind" src="wind.mp4"></audio>
         <audio id="construction" src="construction.mp4"></audio>
+        <audio id="tap" src="Tap.mp3"></audio>
+        <audio id="wrong" src="wrong.mp4"></audio>
         <img src="bush.PNG" class="bush" id="bush">
         <img src="grave.png" class="grave" id="grave">
         <img src="dog.gif" class="dog" id="dog" style="display: none;">
@@ -340,6 +356,21 @@
         <img src="boulder.png" class="boulder" id="boulder18" style="display: block;">
         <img src="boulder.png" class="boulder" id="boulder19" style="display: block;">
         <img src="boulder.png" class="boulder" id="boulder20" style="display: block;">
+
+        <img src="pea.png" class="pea" id="pea1" style="display: block;">
+        <img src="pea.png" class="pea" id="pea2" style="display: block;">
+        <img src="pea.png" class="pea" id="pea3" style="display: block;">
+        <img src="pea.png" class="pea" id="pea4" style="display: block;">
+        <img src="pea.png" class="pea" id="pea5" style="display: block;">
+        <img src="pea.png" class="pea" id="pea6" style="display: block;">
+        <img src="pea.png" class="pea" id="pea7" style="display: block;">
+        <img src="pea.png" class="pea" id="pea8" style="display: block;">
+        <img src="pea.png" class="pea" id="pea9" style="display: block;">
+        <img src="pea.png" class="pea" id="pea10" style="display: block;">
+        <img src="pea.png" class="pea" id="pea11" style="display: block;">
+        <img src="pea.png" class="pea" id="pea12" style="display: block;">
+        <img src="pea.png" class="pea" id="pea13" style="display: block;">
+        <img src="pea.png" class="pea" id="pea14" style="display: block;">
     </div>
 </div>
 
@@ -772,6 +803,10 @@ house0.addEventListener("click", async () => {
             dcrTiles(4);
             const bg = document.getElementById("bg");
             bg.style.backgroundImage = 'url("bg2.jpeg")';
+            document.querySelectorAll('.pea').forEach(p => {
+                p.style.display = 'none';
+            });
+            bush.style.display = "none";
             upgrade3.style.display = "none";
             upgrade4.style.display = "block";
             house0.style.transform = "translateY(-125px)";
@@ -787,7 +822,6 @@ house0.addEventListener("click", async () => {
             dcrPlanks(6);
             dcrTiles(6);
             dog.src = 'dogDead.png';
-            bush.style.display = "none";
             dog.style.height = "10vh";
             dog.style.transform = "translate(-350px, 120px)"
             upgrade4.style.display = "none";
@@ -854,6 +888,17 @@ const invPickaxeIm = document.getElementById("invPickaxeIm")
 var axeCraft = false
 var pickaxeCraft = false
 
+//Used ChatGPT to help create variables linking JS and CSS
+document.documentElement.style.setProperty(
+  "--axe-cursor",
+  "url('axeInaCursor.png'), auto"
+);
+
+document.documentElement.style.setProperty(
+  "--pickaxe-cursor",
+  "url('pickaxeInaCursor.png'), auto"
+);
+
 invAxeIm.addEventListener("click", async () => {
     if ((stickCount >= 1) && (stoneCount >= 1)) {
         invAxeIm.src = 'axeAct.png';
@@ -861,6 +906,10 @@ invAxeIm.addEventListener("click", async () => {
         dcrStones(1);
         invAxeIm.style.pointerEvents = "none";
         axeCraft = true
+        document.documentElement.style.setProperty(
+        "--axe-cursor",
+        "url('axeActCursor.png'), auto"
+        );
     };
 });
 
@@ -871,6 +920,10 @@ invPickaxeIm.addEventListener("click", async () => {
         dcrStones(1);
         invPickaxeIm.style.pointerEvents = "none";
         pickaxeCraft = true
+        document.documentElement.style.setProperty(
+        "--pickaxe-cursor",
+        "url('pickaxeActCursor.png'), auto"
+        );
     };
 });
 
@@ -1283,6 +1336,20 @@ const wind = document.getElementById("wind")
 var textCount = 1
 
 dialogue.addEventListener("click", async () => {
+    tap.currentTime = 0; 
+    tap.play();
+    if (g1Open == true) {
+        dWrapperg1.style.display = "none";
+        dialogue.style.display = "none";
+        g1Open = false;
+        return
+    }
+    if (g2Open == true) {
+        dWrapperg2.style.display = "none";
+        dialogue.style.display = "none";
+        g2Open = false;
+        return
+    }
     if (textCount == 1) {
         t11.style.display = "none";
         t12.style.display = "block";
@@ -1417,6 +1484,72 @@ dialogue.addEventListener("click", async () => {
     textCount += 1;
 });
 
+//Extra stuff :D
+
+const grave = document.getElementById("grave")
+const dWrapperg1 = document.getElementById("dWrapperg1")
+const dWrapperg2 = document.getElementById("dWrapperg2")
+
+var g1Open = false
+var g2Open = false
+
+grave.addEventListener("click", async () => {
+    dialogue.style.display = "block"
+    if (houseNum < 4) {
+        dWrapperg1.style.display = "block";
+        g1Open = true;
+    }
+    if (houseNum >= 4) {
+        dWrapperg2.style.display = "block";
+        g2Open = true;
+    }
+})
+
+const tap = document.getElementById("tap")
+const wrong = document.getElementById("wrong")
+
+document.querySelectorAll('.tree').forEach( p => {
+    p.addEventListener("click", async () => {
+        if (axeCraft == true) {
+            tap.currentTime = 0; 
+            tap.play();
+        } else {
+            wrong.currentTime = 0;
+            wrong.play();
+        }
+    })
+});
+
+document.querySelectorAll('.sticks').forEach( p => {
+    p.addEventListener("click", async () => {
+        tap.currentTime = 0; 
+        tap.play();
+    })
+});
+
+document.querySelectorAll('.stones').forEach( p => {
+    p.addEventListener("click", async () => {
+        tap.currentTime = 0; 
+        tap.play();
+    })
+});
+
+document.querySelectorAll('.boulder').forEach( p => {
+    p.addEventListener("click", async () => {
+        if (pickaxeCraft == true) {
+            tap.currentTime = 0; 
+            tap.play();
+        } else {
+            wrong.currentTime = 0;
+            wrong.play();
+        }
+    })
+});
+
+dog.addEventListener("click", async () => {
+    bark.currentTime = 0;
+    bark.play();
+});
 </script>
 
 </body>

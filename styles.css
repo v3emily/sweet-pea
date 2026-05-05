@@ -1,10 +1,17 @@
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+}
+
 body {
     margin: 0;
     background-color: #CDDE88;
     display: flex;
     overflow: hidden;
     font-family: 'Unkempt';
-    font-size: large;
+    font-size: x-large;
 }
 
 .main {
@@ -319,7 +326,7 @@ body {
 .bar {
     position: relative;
     gap: 15vw;
-    top: -3vh;
+    top: -6vh;
 }
 
 .invSpace {
@@ -396,7 +403,7 @@ body {
 
 .req1 {
     height: 5vh;
-    width: 10vw;
+    width: 13vw;
     left: 11.5vw;
     display: flex;
     flex-direction: row;
@@ -406,7 +413,7 @@ body {
 
 .req2 {
     height: 5vh;
-    width: 10vw;
+    width: 13vw;
     left: 11.5vw;
     display: flex;
     flex-direction: row;
@@ -416,7 +423,7 @@ body {
 
 .req3 {
     height: 5vh;
-    width: 10vw;
+    width: 13vw;
     left: 11.5vw;
     display: flex;
     flex-direction: row;
@@ -464,7 +471,7 @@ body {
 }
 
 .tree:hover {
-    cursor: pointer;
+  cursor: var(--axe-cursor, auto);
 }
 
 #tree1 {
@@ -576,7 +583,7 @@ body {
 }
 
 .boulder:hover {
-    cursor: pointer;
+    cursor: var(--pickaxe-cursor, auto);
 }
 
 #boulder1 {
@@ -679,6 +686,123 @@ body {
     right: 909px;
 }
 
+.pea {
+    position: absolute;
+    z-index: 1;
+    height: 30vh;
+    width: auto;
+    background-color: transparent;
+}
+
+#pea1 {
+    left: 200px;
+    top: 300px;
+}
+
+#pea2 {
+    left: 150px;
+    top: 200px;
+}
+
+#pea3 {
+    left: 200px;
+    top: 100px;
+}
+
+#pea4 {
+    left: 500px;
+    top: 300px;
+}
+
+#pea5 {
+    left: 550px;
+    top: 200px;
+}
+
+#pea6 {
+    left: 500px;
+    top: 100px;
+}
+
+#pea7 {
+    left: 1392px;
+    top: 182px;
+}
+
+#pea8 {
+    left: 881px;
+    top: 1040px;
+}
+
+#pea9 {
+    left: 992px;
+    top: 1237px;
+}
+
+#pea10 {
+    right: 845px;
+    top: 860px;
+}
+
+#pea11 {
+    right: 1226px;
+    top: 1260px;
+}
+
+#pea12 {
+    right: 772px;
+    top: 1333px;
+}
+
+#pea13 {
+    left: 1053px;
+    bottom: 603px;
+}
+
+#pea14 {
+    left: 537px;
+    bottom: 534px;
+}
+
+#pea15 {
+    left: 128px;
+    bottom: 66px;
+}
+
+#pea16 {
+    right: 582px;
+    bottom: 1079px;
+}
+
+#pea17 {
+    right: 1322px;
+    bottom: 51px;
+}
+
+#pea18 {
+    right: 1331px;
+    bottom: 1125px;
+}
+
+#pea19 {
+    left: 985px;
+    top: 183px;
+}
+
+#pea20 {
+    right: 296px;
+    top: 585px;
+}
+
+.boulder:hover {
+    cursor: var(--pickaxe-cursor, auto);
+}
+
+#boulder1 {
+    top: 1321px;
+    right: 586px;
+}
+
 /* Crafting Set up*/
 
 .InvresWrapper {
@@ -692,10 +816,10 @@ body {
 .invrequirementlist {
     position: absolute;
     z-index: 5;
-    height: 25vh;
+    height: 30vh;
     width: auto;
     background-color: transparent;
-    top: -6vh;
+    top: -8vh;
     left: -3vw;
 }
 
@@ -752,6 +876,10 @@ body:has(#invStones:hover) #TileReq {
     position: absolute;
 }
 
+.grave:hover {
+    cursor: pointer;
+}
+
 .dog {
     position: absolute;
     z-index: 2;
@@ -804,7 +932,7 @@ body:has(#invStones:hover) #TileReq {
 .quote {
     color: white;
     animation-name: fade-in;
-    animation-duration: 2s;
+    animation-duration: 1s;
     display: flex;
     flex-direction: column;
     gap: 1vh;
@@ -882,7 +1010,7 @@ body:has(#invStones:hover) #TileReq {
 .text {
     position: absolute;
     left: 10vw;
-    top: 20vh;
+    top: 19vh;
     z-index: 10;
     animation-name: fade-in;
     animation-duration: 2s;
@@ -892,6 +1020,7 @@ body:has(#invStones:hover) #TileReq {
     width: 90vw;
     height: auto;
     position: absolute;
+    top: 5vh
 }
 
 .tutWrapper {
@@ -925,7 +1054,7 @@ body:has(#invStones:hover) #TileReq {
 }
 
 #tut2 {
-    transform: translateX(800px)
+    transform: translateX(680px)
 }
 
 .text {
