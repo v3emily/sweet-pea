@@ -89,6 +89,7 @@ document.addEventListener("click", async () => {
     btnWrapper.style.animationDuration = "2s";
     btnWrapper.style.animationFillMode = "forwards"
     if (playing == false) {
+        bgm.loop = true;
         bgm.play();
         playing = true;
     }
