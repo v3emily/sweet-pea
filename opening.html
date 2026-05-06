@@ -46,6 +46,7 @@
         </div>
     </div>
 </div>
+<audio id="tap" src="Tap.mp3"></audio>
 
 <script>
 
@@ -84,8 +85,17 @@ quote2.addEventListener("click", async () => {
     if (textCount == 3) {
         quote2.style.animationName = "fade-out";
         quote.style.animationDuration = "2s";
-        window.location.href = "game.html";
+        setTimeout(() => {
+            window.location.href = "game.html"
+        }, 1000);
     }
+});
+
+const tap = document.getElementById("tap")
+
+document.addEventListener("click", async () => {
+    tap.currentTime = 0;
+    tap.play();
 });
 </script>
 

@@ -48,6 +48,7 @@
         </div>
     </div>
 </div>
+<audio id="tap" src="Tap.mp3"></audio>
 
 <script>
 
@@ -88,6 +89,13 @@ dWrapper.addEventListener("click", async () => {
     }
     textCount += 1;
 })
+
+const tap = document.getElementById("tap")
+
+document.addEventListener("click", async () => {
+    tap.currentTime = 0;
+    tap.play();
+});
 
 </script>
 

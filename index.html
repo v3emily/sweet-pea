@@ -9,17 +9,90 @@
 </head>
 <body>
 <div class="screen">
-    <div class="startBtn" id="startBtn">
-        <p>start game</p>
+    <img src="title.PNG" class="title" id="title">
+    <div class="btnWrapper" id="btnWrapper">
+        <div class="startBtn" id="startBtn">
+            <p>start game</p>
+        </div>
+        <div class="startBtn" id="credBtn">
+            <p>credits</p>
+        </div>
+    </div>
+    <div class="credits" id="credits">
+        <div class="cWrapper" id="cWrapper">
+            <div class="verse">
+            <h1>Credits:</h1>
+            </div>
+            <div class="verse">
+                <p>Art and Script-- Sophie Luk</p>
+                <p>Coding-- Vanessa Ngai</p>
+            </div>
+            <div class="verse">
+                <p><b>Audio assets:</b></p>
+            </div>
+            <div class="verse">
+                <p>Bgm: “[no copyright music] 'In Dreamland ' background music” by Chillpeach on YouTube</p>
+                <p>BgmS: “[no copyright music] 'Taiyaki ' cute background music” by Chillpeach on YouTube</p>
+                <p>Bush: “Bush Rustling Sound | Bush Rustling Sound Effect | Free Sound Effects” by BridgeSound on Youtube</p>
+                <p>Construction: “FREE Construction Sound Effect” by Free Sound Effects Bank on Youtube</p>
+                <p>Dog: “Dog Barking Sound Effect - Copyright free” by Loudest Paws on Youtube</p>
+                <p>Kitchen: “Kitchen Ambience Sound Effect” by Free Audio Zone on Youtube</p>
+                <p>Sparkle: “Sparkle Sound - ASMR - Free Sound Effects (HD)” by Digital Stock Sounds on Youtube</p>
+                <p>Tap: “Cute Sound Effects for Edit Part 3. by: Hey it's Criz | with Download Link” by Hey it's Criz on Youtube</p>
+                <p>Wind: “Wind Sound SOUND EFFECT - No Copyright[Download Free]” by Sound Effect TV on Youtube</p>
+                <p>Wrong: “Cute Sound Effects for Vlog Part 4. | No Copyright ☁️ 🎶” by Hey it's Criz on Youtube</p>
+            </div>
+            <div class="verse">
+                <p><b>Special thanks to:</b></p>
+                <p>Dr. Sudhu Tewari and Shm Garanganao Almeda for a wonderful semester of Des Inv 23!</p>
+                <p>All the artists who make their art publicly available and usable by other artists :D</p>
+            </div>
+        </div>
     </div>
 </div>
+<audio id="tap" src="Tap.mp3"></audio>
+<audio id="bgm" src="bgmS.mp3"></audio>
 
 <script>
 const startBtn = document.getElementById("startBtn")
+const credBtn = document.getElementById("credBtn")
+const credits = document.getElementById("credits")
+const tap = document.getElementById("tap")
 
 startBtn.addEventListener("click", async () => {
-    window.location.href = "opening.html"
+    tap.currentTime = 0;
+    tap.play();
+    setTimeout(() => {
+        window.location.href = "opening.html"
+    }, 1000);
 });
+
+credBtn.addEventListener("click", async () => {
+    tap.currentTime = 0;
+    tap.play();
+    credits.style.display = "block";
+});
+
+credits.addEventListener("click", async () => {
+    credits.style.display = "none";
+});
+
+const title = document.getElementById("title")
+const btnWrapper = document.getElementById("btnWrapper")
+var playing = false
+
+document.addEventListener("click", async () => {
+    title.style.animation = "flyDown";
+    title.style.animationDuration = "2s";
+    title.style.animationFillMode = "forwards"
+    btnWrapper.style.animation = "flyUp";
+    btnWrapper.style.animationDuration = "2s";
+    btnWrapper.style.animationFillMode = "forwards"
+    if (playing == false) {
+        bgm.play();
+        playing = true;
+    }
+})
 
 </script>
 

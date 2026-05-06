@@ -73,9 +73,22 @@
             <img src="dialogue.png" class="dBox">
         </div>
     </div>
+    <div class="ui">
+        <img src="help.PNG" class="help" id="help">
+        <div class="menu" id="menu">
+            <div class="cWrapper">
+                <h1>Help Menu</h1>
+                <p>Move: Click and drag</p>
+                <p>Collect items: Click</p>
+                <p>*Note: Some items may require tools to collect</p>
+                <p>View upgrade requirements: Hover</p>
+                <p>Craft: Click</p> 
+            </div>
+        </div>
+    </div>
     <div class="bottom">
         <div class="aboveBar">
-            <h1 style="color: white;">Inventory</h1>
+            <h1 style="color: white; z-index: 20;">Inventory</h1>
             <div class="tutorial" id="tut2" style="display: none;">
                 <div class="tutWrapper">
                     <img src="arrow.PNG" class="icon">
@@ -89,6 +102,7 @@
                     <p>Sticks</p>
                     <p class="quant" id="stickQuant">x1</p>
                 </div>
+                <img src="sparkles.gif" class="sparkles" id="sparkleSti">
                 <img src="sticks.png" class="invItem" id="invSticks">
             </div>
             <div class="invSpace" id="invStone" style="display: none;">
@@ -96,6 +110,7 @@
                     <p>Stones</p>
                     <p class="quant" id="stoneQuant">x1</p>
                 </div>
+                <img src="sparkles.gif" class="sparkles" id="sparkleSto">
                 <img src="stones.png" class="invItem" id="invStones">
             </div>
             <div class="invSpace" id="invPlank" style="display: none;">
@@ -116,12 +131,14 @@
                 <div class="invText" id="invAxeText">
                     <p>Axe</p>
                 </div>
+                <img src="sparkles.gif" class="sparkles" id="sparkleA">
                 <img src="axeIna.png" class="invItem" id="invAxeIm">
             </div>
             <div class="invSpace" id="invPickaxe" style="display: none;">
                 <div class="invText" id="invPickaxeText">
                     <p>Pickaxe</p>
                 </div>
+                <img src="sparkles.gif" class="sparkles" id="sparklePA">
                 <img src="pickaxeIna.png" class="invItem" id="invPickaxeIm">
             </div>
             <div class="invSpace" id="invDrawing">
@@ -195,7 +212,12 @@
                 <img src="click.PNG" class="icon">
                 <div class="tutText">Click to interact with objects</div>
             </div>
+            <div class="tutWrapper">
+                <img src="help.PNG" class="icon">
+                <div class="tutText">Click the ? icon in the top right corner for more help!</div>
+            </div>
         </div>
+        <img src="sparkles.gif" class="sparkles" id="sparkleH">
         <img src="house.PNG" class="house" id="house0">
             <div class="resWrapper">
                 <img src="reqlist.png" class="requirementlist" id="reqlist">
@@ -270,6 +292,8 @@
         <audio id="construction" src="construction.mp4"></audio>
         <audio id="tap" src="Tap.mp3"></audio>
         <audio id="wrong" src="wrong.mp4"></audio>
+        <audio id="sparkleSfx" src="sparkle.mp4"></audio>
+        <audio id="kitchen" src="kitchen.mp4"></audio>
         <img src="bush.PNG" class="bush" id="bush">
         <img src="grave.png" class="grave" id="grave">
         <img src="dog.gif" class="dog" id="dog" style="display: none;">
@@ -754,10 +778,18 @@ const tut1 = document.getElementById("tut1");
 const tut2 = document.getElementById("tut2");
 const bark = document.getElementById("bark")
 const construction = document.getElementById("construction")
+const sparkleH = document.getElementById("sparkleH")
+const sparkleSfx = document.getElementById("sparkleSfx")
 
 house0.addEventListener("click", async () => {
     if (houseNum == 0) {
         if ((stickCount >= 4) && (stoneCount >= 2)) {
+            sparkleH.style.display = "block";
+            sparkleSfx.play()
+            sparkleSfx.currentTime = 0;
+            setTimeout(() => {
+                sparkleH.style.display = "none";
+            }, 1000);
             house0.src = 'house1.png';
             houseNum += 1;
             dcrSticks(4);
@@ -779,6 +811,12 @@ house0.addEventListener("click", async () => {
     }
     if (houseNum == 1) {
         if ((stickCount >= 2) && (stoneCount >= 2) && (plankCount >= 2) && (tileCount >= 2)) {
+            sparkleH.style.display = "block";
+            sparkleSfx.play()
+            sparkleSfx.currentTime = 0;
+            setTimeout(() => {
+                sparkleH.style.display = "none";
+            }, 1000);
             house0.src = 'house2.png';
             houseNum += 1;
             dcrSticks(2);
@@ -798,6 +836,12 @@ house0.addEventListener("click", async () => {
     }
     if (houseNum == 2) {
         if ((plankCount >= 4) && (tileCount >= 4)) {
+            sparkleH.style.display = "block";
+            sparkleSfx.play()
+            sparkleSfx.currentTime = 0;
+            setTimeout(() => {
+                sparkleH.style.display = "none";
+            }, 1000);
             house0.src = 'house3.png';
             houseNum += 1;
             dcrPlanks(4);
@@ -810,7 +854,7 @@ house0.addEventListener("click", async () => {
             bush.style.display = "none";
             upgrade3.style.display = "none";
             upgrade4.style.display = "block";
-            house0.style.transform = "translateY(-125px)";
+            house0.style.transform = "translateY(-175px)";
             dialogue.style.display = "block";
             dWrapper4.style.display = "block";
             startStop();
@@ -819,6 +863,12 @@ house0.addEventListener("click", async () => {
     }
     if (houseNum == 3) {
         if ((plankCount >= 6) && (tileCount >= 6)) {
+            sparkleH.style.display = "block";
+            sparkleSfx.play()
+            sparkleSfx.currentTime = 0;
+            setTimeout(() => {
+                sparkleH.style.display = "none";
+            }, 1000);
             house0.src = 'house4.png';
             houseNum += 1;
             dcrPlanks(6);
@@ -836,11 +886,17 @@ house0.addEventListener("click", async () => {
     }
     if (houseNum == 4) {
         if ((plankCount >= 8) && (tileCount >= 8)) {
+            sparkleH.style.display = "block";
+            sparkleSfx.play()
+            sparkleSfx.currentTime = 0;
+            setTimeout(() => {
+                sparkleH.style.display = "none";
+            }, 1000);
             house0.src = 'house5.png';
             dcrPlanks(8);
             dcrTiles(8);
             house0.style.height = "100vh";
-            house0.style.transform = "translateY(-240px)";
+            house0.style.transform = "translateY(-260px)";
             dialogue.style.display = "block";
             dWrapper6.style.display = "block";
             construction.play();
@@ -888,6 +944,10 @@ function dcrTiles(amt) {
 
 const invAxeIm = document.getElementById("invAxeIm")
 const invPickaxeIm = document.getElementById("invPickaxeIm")
+const sparkleA = document.getElementById("sparkleA")
+const sparklePA = document.getElementById("sparklePA")
+const sparkleSti = document.getElementById("sparkleSti")
+const sparkleSto = document.getElementById("sparkleSto")
 var axeCraft = false
 var pickaxeCraft = false
 
@@ -904,6 +964,12 @@ document.documentElement.style.setProperty(
 
 invAxeIm.addEventListener("click", async () => {
     if ((stickCount >= 1) && (stoneCount >= 1)) {
+        sparkleA.style.display = "block";
+        sparkleSfx.play()
+        sparkleSfx.currentTime = 0;
+        setTimeout(() => {
+                sparkleA.style.display = "none";
+        }, 1000);
         invAxeIm.src = 'axeAct.png';
         dcrSticks(1);
         dcrStones(1);
@@ -918,6 +984,12 @@ invAxeIm.addEventListener("click", async () => {
 
 invPickaxeIm.addEventListener("click", async () => {
     if ((stickCount >= 1) && (stoneCount >= 1)) {
+        sparklePA.style.display = "block";
+        sparkleSfx.play()
+        sparkleSfx.currentTime = 0;
+        setTimeout(() => {
+                sparklePA.style.display = "none";
+        }, 1000);
         invPickaxeIm.src = 'pickaxeAct.png';
         dcrSticks(1);
         dcrStones(1);
@@ -936,6 +1008,12 @@ const plankQuant = document.getElementById("plankQuant")
 
 invSticks.addEventListener("click", async() => {
     if ((stickCount >= 2)) {
+        sparkleSti.style.display = "block";
+        sparkleSfx.play()
+        setTimeout(() => {
+            sparkleSti.style.display = "none";
+        }, 1000);
+        sparkleSfx.currentTime = 0;
         dcrSticks(2);
         incrPlanks();
     }
@@ -956,6 +1034,12 @@ const tileQuant = document.getElementById("tileQuant")
 
 invStones.addEventListener("click", async() => {
     if ((stoneCount >= 2)) {
+        sparkleSto.style.display = "block";
+        sparkleSfx.play()
+        sparkleSfx.currentTime = 0;
+        setTimeout(() => {
+            sparkleSto.style.display = "none";
+        }, 1000);
         dcrStones(2);
         incrTiles();
     }
@@ -1339,6 +1423,7 @@ const dWrapper7 = document.getElementById("dWrapper7")
 const bushSfx = document.getElementById("bushSfx")
 const bgm = document.getElementById("bgm")
 const wind = document.getElementById("wind")
+const kitchen = document.getElementById("kitchen")
 
 var textCount = 1
 var etextCount = 1
@@ -1362,6 +1447,7 @@ dialogue.addEventListener("click", async () => {
         t71.style.display = "none";
         t72.style.display = "block";
         etextCount += 1;
+        kitchen.play();
         return
     }
     if (etextCount == 2) {
@@ -1469,11 +1555,11 @@ dialogue.addEventListener("click", async () => {
         t52.style.display = "block";
     }
     if (textCount == 22) {
+        bgm.pause();
         t52.style.display = "none";
         t53.style.display = "block";
     }
     if (textCount == 23) {
-        bgm.pause();
         t53.style.display = "none";
         t54.style.display = "block";
     }
@@ -1614,6 +1700,22 @@ function startStop() {
     }
 }
 
+// Help Menu
+
+const help = document.getElementById("help")
+const menu = document.getElementById("menu")
+
+help.addEventListener("click", async () => {
+    menu.style.display = "block";
+    tap.currentTime = 0;
+    tap.play();
+});
+
+menu.addEventListener("click", async () => {
+    menu.style.display = "none";
+    tap.currentTime = 0;
+    tap.play();
+});
 </script>
 
 </body>

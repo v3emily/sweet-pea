@@ -50,6 +50,19 @@ body {
     transform: translateY(-10vh);
 }
 
+.sparkles {
+    position: absolute;
+    z-index: 30;
+    display: none;
+}
+
+#sparkleH {
+    height: 40vh;
+    width: auto;
+    background-color: transparent;
+    transform: translateY(-10vh);
+}
+
 .bush {
     position: absolute;
     z-index: 1;
@@ -356,6 +369,18 @@ body {
     left: 15vmax;
 }
 
+#sparkleSti {
+    height: 5vh;
+    width: auto;
+    background-color: transparent;
+}
+
+#sparkleSto {
+    height: 5vh;
+    width: auto;
+    background-color: transparent;
+}
+
 #invPlank {
     left: 26vmax;
 }
@@ -368,8 +393,20 @@ body {
     left: 48vmax;
 }
 
+#sparkleA {
+    height: 5vh;
+    width: auto;
+    background-color: transparent;
+}
+
 #invPickaxe {
     left: 59vmax;
+}
+
+#sparklePA {
+    height: 5vh;
+    width: auto;
+    background-color: transparent;
 }
 
 #invAxeIm {
@@ -901,21 +938,68 @@ body:has(#invStones:hover) #TileReq {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('startScreen.png');
+    background-size: cover;
+    flex-direction: column;
+    gap: 2vh;
 }
 
 .startBtn {
-    border: 2px solid black;
-    height: 5vh;
-    width: 10vw;
+    height: 10vh;
+    width: 15vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-image: url('startBtnIna.PNG');
+    background-size: cover;
+    z-index: 5;
 }
 
 .startBtn:hover {
-    background-color: rgb(193, 193, 193);
+    background-image: url('startBtnAct.PNG');
+    background-size: cover;
     cursor: pointer;
+}
+
+.credits {
+    height: 100vh;
+    width: 64vw;
+    background-image: url('boxLarge.png');
+    display: none;
+    position: absolute;
+    background-size: cover;
+    overflow-y: hidden;
+}
+
+.cWrapper {
+    height: 80vh;
+    width: 45vw;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    overflow-y: scroll;
+}
+
+.title {
+    height: 70vh;
+    width: auto;
+    position: absolute;
+    top: -100vh;
+    z-index: 1;
+}
+
+.btnWrapper {
+    margin-top: 120vh;
+    z-index: 3;
+}
+
+@keyframes flyUp {
+    from {margin-top: 120vh;}
+    to {margin-top: 45vh;}
+}
+
+@keyframes flyDown {
+    from {top: -100vh}
+    to {top: 0vh}
 }
 
 /* Opening Scene */
@@ -1045,6 +1129,34 @@ body:has(#invStones:hover) #TileReq {
 #tut1 {
     position: absolute;
     transform: translateX(500px);
+}
+
+.ui {
+    position: absolute;
+    right: 2.5vw;
+    top: 5vh;
+    z-index: 20;
+    
+}
+
+.menu {
+    height: 100vh;
+    width: 64vw;
+    background-image: url('boxLarge.png');
+    display: none;
+    position: absolute;
+    background-size: cover;
+    overflow-y: hidden;
+    transform: translate(-1025px, -130px);
+}
+
+.help {
+    height: 10vh;
+    width: auto;
+}
+
+.help:hover {
+    cursor: pointer;
 }
 
 .aboveBar {
