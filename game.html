@@ -86,6 +86,12 @@
             </div>
         </div>
     </div>
+    <div class="fullPic" id="fullPic">
+        <div class="picWrapper">
+            <img src="picture.png" class="fullPicIm" id="fullPicIm">
+            <h1 style="background-color: #EAD4AB; align-self: center;">A drawing of me and grandma.</h1>
+        </div>
+    </div>
     <div class="bottom">
         <div class="aboveBar">
             <h1 style="color: white; z-index: 20;">Inventory</h1>
@@ -780,6 +786,8 @@ const bark = document.getElementById("bark")
 const construction = document.getElementById("construction")
 const sparkleH = document.getElementById("sparkleH")
 const sparkleSfx = document.getElementById("sparkleSfx")
+const fullPicIm = document.getElementById("fullPicIm")
+const invPictureIm = document.getElementById("invPictureIm")
 
 house0.addEventListener("click", async () => {
     if (houseNum == 0) {
@@ -874,8 +882,10 @@ house0.addEventListener("click", async () => {
             dcrPlanks(6);
             dcrTiles(6);
             dog.src = 'dogDead.png';
+            fullPicIm.src = "pictureEnd.png";
+            invPictureIm.src = "pictureEnd.png";
             dog.style.height = "10vh";
-            dog.style.transform = "translate(-350px, 120px)"
+            dog.style.transform = "translate(-350px, 120px)";
             upgrade4.style.display = "none";
             upgrade5.style.display = "block";
             dialogue.style.display = "block";
@@ -1663,6 +1673,21 @@ dog.addEventListener("click", async () => {
     setTimeout(() => {
         bark.pause();
     }, 2000);
+});
+
+const invDrawing = document.getElementById("invDrawing")
+const fullPic = document.getElementById("fullPic")
+
+invDrawing.addEventListener("click", async () => {
+    fullPic.style.display = "block";
+    tap.currentTime = 0; 
+    tap.play();
+});
+
+fullPic.addEventListener("click", async () => {
+    fullPic.style.display = "none";
+    tap.currentTime = 0; 
+    tap.play();
 });
 
 //End 2 implementation

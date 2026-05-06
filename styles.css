@@ -357,6 +357,10 @@ body {
     top: -3vh;
 }
 
+.invItem:hover {
+    cursor: pointer;
+}
+
 .invText {
     display: flex;
     flex-direction: row;
@@ -1182,4 +1186,29 @@ body:has(#invStones:hover) #TileReq {
 
 #invDrawing {
     left: 69.5vmax;
+}
+
+.fullPic {
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    position: absolute;
+    z-index: 20;
+}
+
+.fullPicIm {
+    height: 72vh;
+    width: 63vw;
+    object-fit: cover;
+    margin-top: 10vh;
+}
+
+.picWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: center;
+    justify-content: center;
 }
