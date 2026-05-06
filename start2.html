@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="screen">
+<div class="screen2">
     <img src="title.PNG" class="title" id="title">
     <div class="btnWrapper" id="btnWrapper">
         <div class="startBtn" id="startBtn">
@@ -51,7 +51,7 @@
     </div>
 </div>
 <audio id="tap" src="Tap.mp3"></audio>
-<audio id="bgm" src="bgmS.mp3"></audio>
+<audio id="bgm" src="wind.mp4"></audio>
 
 <script>
 const startBtn = document.getElementById("startBtn")
@@ -63,7 +63,7 @@ startBtn.addEventListener("click", async () => {
     tap.currentTime = 0;
     tap.play();
     setTimeout(() => {
-        window.location.href = "opening.html"
+        window.location.href = "opening2.html"
     }, 1000);
 });
 

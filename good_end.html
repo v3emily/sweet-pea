@@ -20,7 +20,7 @@
         </div>
         <img src="picture.png" class="fullImage" id="picFull">
     </div>
-     <div class="quote" id="quote" style="display: none;">
+    <div class="quote" id="quote" style="display: none;">
         <div class="verse">
             <p>Dear Anna,</p>
         </div>
@@ -47,12 +47,18 @@
             <p>Your grandma</p>
         </div>
     </div>
+    <div class="quote" id="quote2" style="display: none;">
+        <div class="verse">
+            <p>What would you do if you could start over?</p>
+        </div>
+    </div>
 </div>
 <audio id="tap" src="Tap.mp3"></audio>
 
 <script>
 
 const quote = document.getElementById("quote")
+const quote2 = document.getElementById("quote2")
 const photoWrapper = document.getElementById("photoWrapper")
 const dWrapper = document.getElementById("dWrapper")
 
@@ -60,6 +66,13 @@ quote.addEventListener("click", async () => {
     quote.style.animationName = "fade-out";
     quote.style.animationDuration = "2s";
     quote.style.display = "none";
+    quote2.style.display = "block";
+});
+
+quote2.addEventListener("click", async () => {
+    quote2.style.animationName = "fade-out";
+    quote2.style.animationDuration = "2s";
+    quote2.style.display = "none";
     setTimeout(() => {
         window.location.href = "index.html";
      }, 2000);

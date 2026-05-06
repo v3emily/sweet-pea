@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TBA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <div class="dialogue" id="dialogue">
+        <div class="dWrapper" id="dWrapper1">
+            <div class="text" id="t1.1">The white tiles on the roof were Grandma's idea. She thought it would be funny or something to make it look like we were living in a giant mushroom.  </div>
+            <div class="text" id="t1.2" style="display: none;">As a kid, I thought it was the most magical thing I had ever seen.</div>
+            <div class="text" id="t1.3" style="display: none;">It would hurt her, I think, to see the state of this house now. </div>
+            <img src="dialogue.png" class="dBox">
+        </div>
+        <div class="dWrapper" id="dWrapper2" style="display: none;">
+            <div class="text" id="t2.1">Looking for something?</div>
+            <div class="text" id="t2.2" style="display: none;">Have you forgotten? There's nothing left.</div>
+            <img src="dialogue.png" class="dBox">
+        </div>
+    </div>
+    <div class="ui">
+        <img src="help.PNG" class="help" id="help">
+        <div class="menu" id="menu">
+            <div class="cWrapper">
+                <h1>Help Menu</h1>
+                <p>Move: Click and drag</p>
+                <p>Collect items: Click</p>
+                <p><b>* Note:</b> Some items may require tools to collect</p>
+                <p>View upgrade requirements: Hover</p>
+                <p>Craft: Click</p> 
+                <p><b>* Tip:</b> Did you know that you can convert your sticks and stones into planks and tiles?</p> 
+            </div>
+        </div>
+    </div>
+    <div class="fullPic" id="fullPic">
+        <div class="picWrapper">
+            <img src="pictureEnd.png" class="fullPicIm" id="fullPicIm">
+            <h1 style="background-color: #EAD4AB; align-self: center;">A drawing of me and grandma.</h1>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="aboveBar">
+            <h1 style="color: white; z-index: 20;">Inventory</h1>
+        </div>
+        <div class="bar">
+            <div class="invSpace" id="invDrawing">
+                <div class="invText" id="invDrawingText">
+                    <p>Drawing</p>
+                </div>
+                <img src="pictureEnd.png" class="invItem" id="invPictureIm">
+            </div>
+            <img src="inventory.png" class="inventory" id="inventory">
+        </div>
+    </div>
+    <div class="bg" id="bg">
+        <div class="tutorial" id="tut1">
+            <div class="tutWrapper">
+                <img src="drag.PNG" class="icon">
+                <div class="tutText">Click and drag on grass to explore</div>
+            </div>
+            <div class="tutWrapper">
+                <img src="hover.PNG" class="icon">
+                <div class="tutText">Hover over items to view upgrade requirements</div>
+            </div>
+            <div class="tutWrapper">
+                <img src="click.PNG" class="icon">
+                <div class="tutText">Click to interact with objects</div>
+            </div>
+            <div class="tutWrapper">
+                <img src="help.PNG" class="icon">
+                <div class="tutText">Click the ? icon in the top right corner for more help!</div>
+            </div>
+        </div>
+        <img src="house.PNG" class="house" id="house0">
+        <img src="grave.png" class="grave" id="grave">
+        <audio id="bgm" src="bgm.mp3"></audio>
+        <audio id="tap" src="Tap.mp3"></audio>
+    </div>
+</div>
+
+<script>
+bg = document.getElementById("bg");
+
+var curPos = [];
+var dragging = false;
+
+var movedX = 0;
+var movedY = 0;
+
+bg.addEventListener("mousedown", (event) => {
+    curPos = [event.clientX, event.clientY];
+    dragging = true;
+});
+
+
+//Used ChatGPT for bounding logic
+document.addEventListener("mousemove", (event) => {
+    if (dragging) {
+        const nextPos = [event.clientX, event.clientY];
+
+        const distX = nextPos[0] - curPos[0];
+        const distY = nextPos[1] - curPos[1];
+
+        movedX += distX;
+        movedY += distY;
+
+        const container = bg.parentElement;
+
+        const containerRect = container.getBoundingClientRect();
+        const bgRect = bg.getBoundingClientRect();
+
+        const maxX = (bgRect.width - containerRect.width) / 2;
+        const maxY = (bgRect.height - containerRect.height) / 2;
+
+        movedX = Math.max(-maxX, Math.min(maxX, movedX));
+        movedY = Math.max(-maxY, Math.min(maxY, movedY));
+
+        bg.style.transform = `
+            translate(-50%, -50%)
+            translate(${movedX}px, ${movedY}px)
+        `;
+
+        curPos = nextPos;
+        bg.style.cursor = "grabbing";
+    }
+});
+
+bg.addEventListener("mouseup", (event) => {
+    dragging = false;
+    bg.style.cursor = "grab";
+});
+
+const dialogue = document.getElementById("dialogue")
+const t11 = document.getElementById("t1.1")
+const t12 = document.getElementById("t1.2")
+const t13 = document.getElementById("t1.3")
+const dWrapper1 = document.getElementById("dWrapper1")
+const t21 = document.getElementById("t2.1")
+const t22 = document.getElementById("t2.2")
+const dWrapper2 = document.getElementById("dWrapper2")
+
+var textCount = 1
+
+dialogue.addEventListener("click", async () => {
+    tap.currentTime = 0; 
+    tap.play();
+    if (textCount == 1) {
+        t11.style.display = "none";
+        t12.style.display = "block";
+        bgm.loop = true;
+        bgm.play();
+    }
+    if (textCount == 2) {
+        t12.style.display = "none";
+        t13.style.display = "block";
+    }
+    if (textCount == 3) {
+        dWrapper1.style.display = "none";
+        dialogue.style.display = "none";
+        startStop();
+    }
+    if (textCount == 4) {
+        t21.style.display = "none";
+        t22.style.display = "block";
+        bgm.loop = true;
+        bgm.pause();
+    }
+    if (textCount == 5) {
+        window.location.href = "purgatory.html"
+    }
+    textCount += 1;
+});
+
+const help = document.getElementById("help")
+const menu = document.getElementById("menu")
+
+help.addEventListener("click", async () => {
+    menu.style.display = "block";
+    tap.currentTime = 0;
+    tap.play();
+});
+
+menu.addEventListener("click", async () => {
+    menu.style.display = "none";
+    tap.currentTime = 0;
+    tap.play();
+});
+
+let isRunning = false;
+let startTime = 0;
+let elapsedTime = 0;
+let intervalId = null;
+
+function startStop() {
+    if (isRunning) {
+    elapsedTime == 0;
+    isRunning = false;
+    clearInterval(intervalId);
+    console.log('stopped at', elapsedTime);
+    } else {
+        startTime = Date.now();
+        isRunning = true;
+
+        intervalId = setInterval(() => {
+            const currentElapsed = elapsedTime + (Date.now() - startTime);
+
+            console.log(currentElapsed);
+
+            if (currentElapsed >= 30000) {
+                dialogue.style.display = "block"; 
+                dWrapper2.style.display = "block";
+                return
+            }
+        }, 100);
+    }
+}
+
+const invDrawing = document.getElementById("invDrawing")
+const fullPic = document.getElementById("fullPic")
+
+invDrawing.addEventListener("click", async () => {
+    fullPic.style.display = "block";
+    tap.currentTime = 0; 
+    tap.play();
+});
+
+fullPic.addEventListener("click", async () => {
+    fullPic.style.display = "none";
+    tap.currentTime = 0; 
+    tap.play();
+});
+
+</script>
+
+</body>
+</html>

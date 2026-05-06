@@ -973,6 +973,7 @@ body:has(#invStones:hover) #TileReq {
     position: absolute;
     background-size: cover;
     overflow-y: hidden;
+    z-index: 30;
 }
 
 .cWrapper {
@@ -984,7 +985,7 @@ body:has(#invStones:hover) #TileReq {
 }
 
 .title {
-    height: 70vh;
+    height: 65vh;
     width: auto;
     position: absolute;
     top: -100vh;
@@ -998,7 +999,7 @@ body:has(#invStones:hover) #TileReq {
 
 @keyframes flyUp {
     from {margin-top: 120vh;}
-    to {margin-top: 45vh;}
+    to {margin-top: 50vh;}
 }
 
 @keyframes flyDown {
@@ -1211,4 +1212,30 @@ body:has(#invStones:hover) #TileReq {
     gap: 2vh;
     align-items: center;
     justify-content: center;
+}
+
+/* After "Bad" End */
+
+.screen2 {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('startScreen2.png');
+    background-size: cover;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+#bg2 {
+    background-image: url('bg2.jpeg');
+}
+
+.blackBG {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    z-index: 0;
+    background-color: black;
 }
